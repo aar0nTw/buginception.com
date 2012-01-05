@@ -4,7 +4,7 @@
 
 url: http://aar0n-blog.heroku.com/ 
 title: "{Bug:inception}"
-subtitle: #define TRUE FALSE;
+subtitle: "#define TRUE FALSE;"
 author: Aar0n
 simple_search: http://google.com/search
 description:
