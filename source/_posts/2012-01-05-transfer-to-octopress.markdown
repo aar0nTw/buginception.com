@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "轉換到Octopress"
-date: 2012-01-05 18:10
+title: "Transfer-to-Octopress"
+date: 2012-01-05 18:19
 comments: true
-categories:blog,octopress 
+categories: [blog,octopress,tumblr]
 ---
-有鑑於Tumblr越來越不穩…我決定改用Octopress
-
+由於Tumblr 最近實在有點不穩，於是從Tumblr 轉到 Octopress
