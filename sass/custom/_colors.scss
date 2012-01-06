@@ -3,7 +3,8 @@
 // If you need a handy color picker try http://hslpicker.com
 
 //$header-bg: #263347;
-//$subtitle-color: lighten($header-bg, 58);
+$header-bg: #000;
+$subtitle-color: lighten($header-bg, 95);
 //$nav-bg: desaturate(lighten(#8fc17a, 18), 5);
 //$nav-bg-front: image-url('noise.png');
 //$nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
@@ -14,13 +15,12 @@
 //$footer-bg-front: image-url('noise.png');
 //$footer-bg-back: linear-gradient(lighten($footer-bg, 8), $footer-bg, darken($footer-bg, 11));
 
-
 /* To use the light Solarized highlighting theme uncomment the following line */
 //$solarized: light;
 
 /* If you want to tweak the Solarized colors you can do that here */
 //$base03:          #002b36; //darkest blue
-//$base02:          #073642; //dark blue
+$base02:          #073642; //dark blue
 //$base01:          #586e75; //darkest gray
 //$base00:          #657b83; //dark gray
 //$base0:           #839496; //medium gray
@@ -35,7 +35,7 @@
 //$solar-blue:      #268bd2;
 //$solar-cyan:      #2aa198;
 //$solar-green:     #859900;
-
+$title-color: $base02;
 
 /* Non highlighted code colors */
 //$pre-bg: $base03;
