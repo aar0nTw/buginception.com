@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | {Bug:inception}]]></title>
   <link href="http://aar0n-blog.heroku.com//blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://aar0n-blog.heroku.com//"/>
-  <updated>2012-01-07T03:04:43+08:00</updated>
+  <updated>2012-01-07T03:10:36+08:00</updated>
   <id>http://aar0n-blog.heroku.com//</id>
   <author>
     <name><![CDATA[Aar0n]]></name>
@@ -19,6 +19,10 @@
     <updated>2012-01-05T18:19:00+08:00</updated>
     <id>http://aar0n-blog.heroku.com//blog/2012/01/05/transfer-to-octopress</id>
     <content type="html"><![CDATA[<p>由於Tumblr 最近實在有點不穩，於是從Tumblr 轉到 Octopress</p>
+
+<p>至於Octopress有什麼好處跟特點，很多前輩高人都闡述過了，我就不多囉嗦了</p>
+
+<p>如果還是想知道的請見 <a href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">Why Octopress?</a> via xDite</p>
 ]]></content>
   </entry>
   
