@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: blog | {Bug:inception}]]></title>
-  <link href="http://blog.buginception.com//blog/categories/blog/atom.xml" rel="self"/>
-  <link href="http://blog.buginception.com//"/>
-  <updated>2012-01-07T04:03:21+08:00</updated>
-  <id>http://blog.buginception.com//</id>
+  <link href="http://blog.buginception.com/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://blog.buginception.com/"/>
+  <updated>2012-01-07T04:06:35+08:00</updated>
+  <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aar0n]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[轉換至Octopress.]]></title>
-    <link href="http://blog.buginception.com//blog/2012/01/05/switching-from-tumblr-to-octopress/"/>
+    <link href="http://blog.buginception.com/blog/2012/01/05/switching-from-tumblr-to-octopress/"/>
     <updated>2012-01-05T18:19:00+08:00</updated>
-    <id>http://blog.buginception.com//blog/2012/01/05/switching-from-tumblr-to-octopress</id>
+    <id>http://blog.buginception.com/blog/2012/01/05/switching-from-tumblr-to-octopress</id>
     <content type="html"><![CDATA[<p>由於Tumblr 最近實在有點不穩，於是從Tumblr 轉到 Octopress</p>
 
 <p>至於Octopress有什麼好處跟特點，很多前輩高人都闡述過了，我就不多囉嗦了</p>
