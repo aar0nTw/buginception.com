@@ -9,6 +9,8 @@ footer: true
 
 ##關於 Aaron
 
+![](http://gravatar.com/avatar/f085e1553be82bc8425469b5b235d664)
+
 在台灣這個小小島上的一位小小碼農
 
 任職於 [Nexdoor.inc](http://www.nexdoor.cc), 擔任Web Developer職位
