@@ -4,7 +4,7 @@
   <title><![CDATA[{Bug:inception}]]></title>
   <link href="http://blog.buginception.com/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-01-07T11:50:04+08:00</updated>
+  <updated>2012-01-11T15:29:37+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aar0n]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[yii-assign-attributes]]></title>
+    <link href="http://blog.buginception.com/blog/2012/01/11/yii-assign-attributes/"/>
+    <updated>2012-01-11T15:28:00+08:00</updated>
+    <id>http://blog.buginception.com/blog/2012/01/11/yii-assign-attributes</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[轉換至Octopress.]]></title>
