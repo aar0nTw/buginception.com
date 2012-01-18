@@ -7,4 +7,6 @@ sass.old
 source.old
 source/_stash
 source/stylesheets/screen.css
+_deploy
 node_modules
+vendor
