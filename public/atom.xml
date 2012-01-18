@@ -4,7 +4,7 @@
   <title><![CDATA[{Bug:inception}]]></title>
   <link href="http://blog.buginception.com/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-01-11T15:29:37+08:00</updated>
+  <updated>2012-01-18T16:40:02+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aar0n]]></name>
@@ -14,11 +14,65 @@
 
   
   <entry>
-    <title type="html"><![CDATA[yii-assign-attributes]]></title>
+    <title type="html"><![CDATA[[Yii]Assign Attribute's issue]]></title>
     <link href="http://blog.buginception.com/blog/2012/01/11/yii-assign-attributes/"/>
     <updated>2012-01-11T15:28:00+08:00</updated>
     <id>http://blog.buginception.com/blog/2012/01/11/yii-assign-attributes</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>通常情況下，我們習慣這樣來給予Model值</p>
+
+<figure class='code'><figcaption><span>FooController</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="c1">//....上略</span>
+</span><span class='line'><span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;Foo&#39;</span><span class="p">])){</span>
+</span><span class='line'>  <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">attributes</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;Foo&#39;</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>這叫做 <strong>massively assigned</strong></p>
+
+<p>而輸出json時我們會使用CJSON來encode</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="c1">//....上略</span>
+</span><span class='line'><span class="k">echo</span> <span class="nx">CJSON</span><span class="o">::</span><span class="na">encode</span><span class="p">(</span><span class="nv">$model</span><span class="p">);</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>問題來了,有時我們同時做 <strong>massively assigned</strong> 再輸出JSON時, 接收的一方(也許是mobile phone) 怎麽parse都parse不出我們encode的JSON</p>
+
+<p>這時候就要注意你的Model有没有問題了,因爲<strong>massively assigned</strong>是不允許<strong>unsafe attribute</strong>的
+請檢查你的Model::rules()</p>
+
+<figure class='code'><figcaption><span>Model:Foo</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="k">public</span> <span class="k">function</span> <span class="nf">rules</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="c1">//略</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>檢查你的model attribute有無遺漏,因爲有時候因爲新的需求,在db加入新的schema,而忘了在Model裏加入新的rule,這個attribute就會變成unsafe,會在YII_DEBUG出現錯誤訊息,output buffering也會出現長度3的空白string,JSON當然就parse不出來了</p>
+
+<p>我建議在新增column時,還是使用migration,比較安全:)</p>
 ]]></content>
   </entry>
   
