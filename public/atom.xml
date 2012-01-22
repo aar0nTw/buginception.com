@@ -4,7 +4,7 @@
   <title><![CDATA[{Bug:inception}]]></title>
   <link href="http://blog.buginception.com/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-01-19T02:38:05+08:00</updated>
+  <updated>2012-01-23T01:40:04+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aar0n]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[[Yii]Ch.0-1 YiiFramework簡介 ]]></title>
+    <link href="http://blog.buginception.com/blog/2012/01/22/why-use-yii/"/>
+    <updated>2012-01-22T19:55:00+08:00</updated>
+    <id>http://blog.buginception.com/blog/2012/01/22/why-use-yii</id>
+    <content type="html"><![CDATA[<p>PHP的framework非常的多樣,隨手拈來都可以講出很多,舉例如老牌的<a href="http://cakephp.org/">CakePHP</a>, <a href="http://framework.zend.com">Zend</a>, <a href="http://www.symfony-project.org/">Symfony</a>, <a href="http://codeigniter.com">CodeIgniter</a>,或者是<a href="http://www.slimframework.com">SlimFramework</a>,抑或者最近常聽到的<a href="http://fuelphp.com">fuelPHP</a>,到我所要提到的<a href="http://www.yiiframewok.com">Yii</a>.</p>
+
+<p>Yii,為什麼要採用Yii? 這邊有幾點來稍微簡介一下:</p>
+
+<h3>1. High Performance</h3>
+
+<p>官網比較了同樣未採用APC與使用APC之後的RPS數據,Yii 在未使用APC的狀況下,RPS大約比CI多約15%,Cake的3倍,但在使用了APC之後Yii的RPS是CI的3倍,Cake的8倍,Symfony的13倍</p>
+
+<p>至於Yii為何能做到?</p>
+
+<!-- more -->
+
+
+<p>主要的原因應該在於整個Yii Framework大量採用了lazy loading的技巧,舉例來說,在一個class file未被使用之前,這個檔案不會被include,在一個物件將要被使用之前Yii也不會初始化該物件,其他框架的缺點在於縱使未被使用或沒有被Request的功能例如DB connection,user session等,都還是被framework本身所啟用。</p>
+
+<h3>2. MVC pattern</h3>
+
+<p>Yii相當完整的實作了MVC模式,MVC模式是近年來相當熱門的設計模式,概念上相當合理分離了商業邏輯與流程管控,但是實務上的MVC其實常常容易走調,這我之後有機會會在提到,簡而言之,在第一線講究使用者體驗的軟體實作上(包含了web,mobile app)MVC模式是相當熱門的模式,舉凡RoR,Spring,ASP.net,皆有MVC模式的實作. 當然許多的PHP framework也實作了MVC模式,Yii的MVC實作基本上參考了Rails.</p>
+
+<h3>3. ActiveRecord</h3>
+
+<p>Yii實作了ActiveRecord,講到ActiveRecord不得不講到Rails,Rails便是採用ActiveRecord模式來做為ORM框架,ActiveRecord Class代表資料庫中的一張表,每個ActiveRecord實體都對應了一筆記錄,ActiveRecord模式的特性讓我們可用快速的採用物件導向的方式來控制資料庫,ActiveRecord可以說是Yii跟Rails的ORM類,但是ActiveRecord跟一般所說的ORM如Java的Hibernate又有很多不同,它實作起來更為快速,直覺。</p>
+
+<h3>4. Unit Test</h3>
+
+<p>TDD一直都是很多人在推廣的開發方式,Yii本身支援了基於PHPUnit以及Selenium的單元測試,在Gii產生Model的ActiveRecord類別後會自動產生一個相對應的測試類別.</p>
+
+<h3>5. Automatic Code Generation</h3>
+
+<p>Yii擁有相當程度的自動產出功能,建立好一張Table後,便可以採用內建的產生器,產出初期MVC雛形,整個CRUD流程,包含Model,Controller,到前端的表單,都可以在一瞬間建立,省去初期煩人的建置時間.</p>
+
+<p>Yii框架還有相當多的特性,將會在往後的文章裡面提到,另外Yii是由居住於華盛頓DC的華人Qing Xue所設計的PHP框架,這在這個圈子是很難得的,而Yii也已經累積了不少使用者,希望這個框架能夠繼續的發展下去,成為PHP其中一個優秀的App Framework.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[[Yii]繁體中文教程大綱]]></title>
