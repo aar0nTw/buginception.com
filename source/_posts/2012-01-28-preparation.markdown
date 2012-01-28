@@ -3,7 +3,7 @@ layout: post
 title: "[Yii]Ch.0-2 事前準備"
 date: 2012-01-28 16:21
 comments: true
-categories: [yii，php，tutorial] 
+categories: [yii,php,tutorial] 
 ---
 
 上篇我提到了在PHP裡採用Yii框架有什麼好處，那麼這次開始就要來提到如何採用Yii，需要哪些事前準備.
