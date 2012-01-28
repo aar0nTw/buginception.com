@@ -4,7 +4,7 @@
   <title><![CDATA[Category: php | {Bug:inception}]]></title>
   <link href="http://blog.buginception.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-01-28T17:44:08+08:00</updated>
+  <updated>2012-01-28T17:47:17+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aar0n]]></name>
@@ -40,18 +40,18 @@
 <p>這邊推薦幾個編輯器:</p>
 
 <ol>
-<li><a href="http://aptana.com">Aptana Studio</a>
+<li><h4><a href="http://aptana.com">Aptana Studio</a></h4>
 
-<blockquote><p>從eclipse衍申而來的老牌IDE，跨平台，我學生時期一直到剛進公司都是採用Aptana在做開發，優點是跨平台，eclipse plugin眾多，本身支援JavaScript的開發，有多種JavaScript Framework如jQuery，Prototype，extJS的自動提示功能，缺點就是太肥大了，OSX上使用有時候感覺不是很順，還會發呆:(</p></blockquote></li>
-<li><a href="http://macromates.com/">TextMate</a>
+<p>從eclipse衍申而來的老牌IDE，跨平台，我學生時期一直到剛進公司都是採用Aptana在做開發，優點是跨平台，eclipse plugin眾多，本身支援JavaScript的開發，有多種JavaScript Framework如jQuery，Prototype，extJS的自動提示功能，缺點就是太肥大了，OSX上使用有時候感覺不是很順，還會發呆:(</p></li>
+<li><h4><a href="http://macromates.com/">TextMate</a></h4>
 
-<blockquote><p>熟悉Ruby開發的開發者不可能不知道的一個編輯器，也是老牌子了，不過中文支援有很大的問題。付費軟體</p></blockquote></li>
-<li><a href="http://www.sublimetext.com/2">Sublime text 2</a>
+<p>熟悉Ruby開發的開發者不可能不知道的一個編輯器，也是老牌子了，不過中文支援有很大的問題。付費軟體</p></li>
+<li><h4><a href="http://www.sublimetext.com/2">Sublime text 2</a></h4>
 
-<blockquote><p>我現在使用的編輯器之一，介面漂亮，跨平台，Plugin也不少，而且免費使用，中文也沒有問題，而且除了PHP，其他語言的支援性也很好，尤其是Python，沒事會寫寫Python的玩家們，我很推薦這一套編輯器。</p></blockquote></li>
-<li><a href="http://www.vim.org/">vim</a>
+<p>我現在使用的編輯器之一，介面漂亮，跨平台，Plugin也不少，而且免費使用，中文也沒有問題，而且除了PHP，其他語言的支援性也很好，尤其是Python，沒事會寫寫Python的玩家們，我很推薦這一套編輯器。</p></li>
+<li><h4><a href="http://www.vim.org/">vim</a></h4>
 
-<blockquote><p>常操作unix系的OS必學的編輯器，有很多的plugin，當然terminal下只有全鍵盤的操作方式，但是習慣了實在是會上癮，我連sublime text都有加入vim的操作快捷，可見對其操作中毒之深，我常常會有機會直接ssh到測試server上修改一些小東西，vi/vim的操作是必學的。</p></blockquote></li>
+<p>常操作unix系的OS必學的編輯器，有很多的plugin，當然terminal下只有全鍵盤的操作方式，但是習慣了實在是會上癮，我連sublime text都有加入vim的操作快捷，可見對其操作中毒之深，我常常會有機會直接ssh到測試server上修改一些小東西，vi/vim的操作是必學的。</p></li>
 </ol>
 
 
