@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: tutorial | {Bug:inception}]]></title>
+  <title><![CDATA[Category: tutorial | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/tutorial/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-01-28T22:11:02+08:00</updated>
+  <updated>2012-02-07T14:26:32+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
-    <name><![CDATA[Aar0n]]></name>
+    <name><![CDATA[Aaron Huang]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
