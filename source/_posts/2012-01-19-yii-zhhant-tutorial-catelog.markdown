@@ -5,7 +5,7 @@ date: 2012-01-19 01:03
 comments: true
 categories: [php,yii,tutorial] 
 ---
-用PHP&YiiFramework開發專案也一年多了,心中一直有個小小的計畫,Yii大部分的中文資源都是簡體中文,一直想要動筆寫YiiFramework的繁體中文tutorial,但是自己本身也有工作,終於讓我等到年假了,在這篇文章裡面我想先訂出整個教程的大綱,至於我到底寫不寫的完,關鍵就看這個年假了:)
+用PHP&YiiFramework開發專案也一年多了,心中一直有個小小的計畫,Yii大部分的中文資源都是簡體中文,一直想要動筆寫YiiFramework的繁體中文tutorial,但是自己本身也有工作,所以在這篇文章裡面我想先訂出整個教程的大綱
 
 撰寫方面,基本上我會參考官方英文版的教程加上我個人在開發專案上的經驗來完成這個繁體中文的文件
 
@@ -15,8 +15,8 @@ categories: [php,yii,tutorial]
 
 <!-- more -->
 1. Ch.0 為何採用Yii?
-	* Yii簡介
-	* 事前準備
+	* [Yii簡介](/blog/2012/01/22/why-use-yii/)
+	* [事前準備](/blog/2012/01/28/preparation/)
 	* 環境建置
 	* 使用yiic建立第一個webapp
 2. Ch.1 從基礎開始:
