@@ -17,7 +17,7 @@ categories: [php,yii,tutorial]
 1. Ch.0 為何採用Yii?
 	* [Yii簡介](/blog/2012/01/22/why-use-yii/)
 	* [事前準備](/blog/2012/01/28/preparation/)
-	* 環境建置
+	* [環境建置](/blog/2012/02/09/yii-environment/)
 	* 使用yiic建立第一個webapp
 2. Ch.1 從基礎開始:
 	* MVC架構

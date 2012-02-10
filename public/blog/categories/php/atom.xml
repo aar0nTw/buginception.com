@@ -4,7 +4,7 @@
   <title><![CDATA[Category: php | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-02-11T00:08:22+08:00</updated>
+  <updated>2012-02-11T00:12:10+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -200,7 +200,7 @@ CAssetManager.basePath "/var/www/html/yii/demos/blog/assets" is invalid. Please 
 <ul>
 <li><a href="/blog/2012/01/22/why-use-yii/">Yii簡介</a></li>
 <li><a href="/blog/2012/01/28/preparation/">事前準備</a></li>
-<li>環境建置</li>
+<li><a href="/blog/2012/02/09/yii-environment/">環境建置</a></li>
 <li>使用yiic建立第一個webapp</li>
 </ul>
 </li>
