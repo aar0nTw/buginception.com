@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tutorial | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/tutorial/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-02-09T14:56:38+08:00</updated>
+  <updated>2012-02-10T23:56:06+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[[Yii]Ch.0-3 Yii環境建置]]></title>
+    <link href="http://blog.buginception.com/blog/2012/02/09/yii-environment/"/>
+    <updated>2012-02-09T16:52:00+08:00</updated>
+    <id>http://blog.buginception.com/blog/2012/02/09/yii-environment</id>
+    <content type="html"><![CDATA[<p>這一篇可能是一個比較短的篇幅，來講環境建置的部份，上一篇已經有稍微的講到了環境需求，那我也不在重複一次，接著請下載最新的YiiFramework</p>
+
+<blockquote><p><a href="http://www.yiiframework.com/download/">Yii 官方網站下載</a></p></blockquote>
+
+<p>或者是github上熱心人士非官方的source，目前更新到1.1.9</p>
+
+<p><code>bash
+$ git clone https://github.com/dmtrs/unofficial-yii-framework-mirror.git
+</code></p>
+
+<p>解壓縮到網站根目錄下，取個簡單的名字，例如：yii</p>
+
+<p><code>bash
+$ tar -xzf yii-1.1.9.r3527.tar.gz
+$ mv ./yii-1.1.9.r3527 yii
+</code></p>
+
+<p>接下來我們打開Yii requirement頁面來看一下yii系統需求檢查：</p>
+
+<!-- more -->
+
+
+<p><code>
+http://localhost/yii/requirements/
+</code></p>
+
+<p>可以看到類似下面的畫面：</p>
+
+<p><img src="/images/article/ch0_3_01.PNG" alt="Yii系統需求檢查" /></p>
+
+<p>如果你是一個新建立的網站環境，可能會有大部分的php extension是未通過的狀況，
+上圖中，由於我這邊沒有memcache server所以除了memcache extension之外其餘都是通過的狀態，這邊建議是使用者是YiiFramework的extension是必備的，其餘元件看個人需求安裝。</p>
+
+<ul>
+<li><a href="http://pecl.php.net/package/APC">APC</a></li>
+<li><a href="http://www.php.net/manual/en/mcrypt.installation.php">mcrypt</a></li>
+<li><a href="http://www.php.net/manual/en/memcache.installation.php">Memcache</a></li>
+<li><a href="http://www.php.net/manual/en/image.installation.php">GD</a></li>
+</ul>
+
+
+<p>當我們測試完Yii Requirements，可以打開yii demo頁來看看：</p>
+
+<p><code>
+http://localhost/yii/demos/blog
+</code></p>
+
+<p>可以看到一個採用YiiFramework的Blog：</p>
+
+<p><img src="/images/article/ch0_3_02.PNG" alt="Yii Blog Demo" /></p>
+
+<p>到這邊為止，可能會遇到Demo頁面遇到以下狀況：
+<code>
+Application runtime path "/var/www/html/yii/demos/blog/protected/runtime" is not valid. Please make sure it is a directory writable by the Web server process.
+</code></p>
+
+<p>或者是</p>
+
+<p><code>
+CAssetManager.basePath "/var/www/html/yii/demos/blog/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.
+</code></p>
+
+<p>這時只要修改一下<strong>assets</strong>跟<strong>protected/runtime</strong>的資料夾權限讓php可以存取，就沒有問題了:)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[[Yii]Ch.0-2 事前準備]]></title>

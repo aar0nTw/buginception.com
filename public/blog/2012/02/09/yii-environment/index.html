@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - [bug:inception]</title>
+  <title>[Yii]Ch.0-3 Yii環境建置 - [bug:inception]</title>
   <meta name="author" content="Aaron Huang">
 
   
-  <meta name="description" content="Blog Archive 2012 [Yii]Ch.0-3 Yii環境建置
-Feb 09 2012 posted in php, tutorial, yin [Yii]Ch.0-2 事前準備
-Jan 28 2012 posted in php, tutorial, yii [Yii]Ch.0-1 &hellip;">
+  <meta name="description" content="這一篇可能是一個比較短的篇幅，來講環境建置的部份，上一篇已經有稍微的講到了環境需求，那我也不在重複一次，接著請下載最新的YiiFramework Yii 官方網站下載 或者是github上熱心人士非官方的source，目前更新到1.1.9 1
+$ git clone https://github. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ Jan 28 2012 posted in php, tutorial, yii [Yii]Ch.0-1 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.buginception.com/blog/archives">
+  <link rel="canonical" href="http://blog.buginception.com/blog/2012/02/09/yii-environment">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -137,106 +136,167 @@ Jan 28 2012 posted in php, tutorial, yii [Yii]Ch.0-1 &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">[Yii]Ch.0-3 Yii環境建置</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-09T16:52:00+08:00" pubdate data-updated="true">Feb 9<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
+
+
+<div class="entry-content"><p>這一篇可能是一個比較短的篇幅，來講環境建置的部份，上一篇已經有稍微的講到了環境需求，那我也不在重複一次，接著請下載最新的YiiFramework</p>
+
+<blockquote><p><a href="http://www.yiiframework.com/download/">Yii 官方網站下載</a></p></blockquote>
+
+<p>或者是github上熱心人士非官方的source，目前更新到1.1.9</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone https://github.com/dmtrs/unofficial-yii-framework-mirror.git
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>解壓縮到網站根目錄下，取個簡單的名字，例如：yii</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>tar -xzf yii-1.1.9.r3527.tar.gz
+</span><span class='line'><span class="nv">$ </span>mv ./yii-1.1.9.r3527 yii
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接下來我們打開Yii requirement頁面來看一下yii系統需求檢查：</p>
+
+<!-- more -->
 
 
 
-  
-  <h2>2012</h2>
 
-<article>
-  
-<h1><a href="/blog/2012/02/09/yii-environment/">[Yii]Ch.0-3 Yii環境建置</a></h1>
-<time datetime="2012-02-09T16:52:00+08:00" pubdate><span class='month'>Feb</span> <span class='day'>09</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yin/'>yin</a></span>
-</footer>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>http://localhost/yii/requirements/
+</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p>可以看到類似下面的畫面：</p>
+
+<p><img src="/images/article/ch0_3_01.PNG" alt="Yii系統需求檢查" /></p>
+
+<p>如果你是一個新建立的網站環境，可能會有大部分的php extension是未通過的狀況，
+上圖中，由於我這邊沒有memcache server所以除了memcache extension之外其餘都是通過的狀態，這邊建議是使用者是YiiFramework的extension是必備的，其餘元件看個人需求安裝。</p>
+
+<ul>
+<li><a href="http://pecl.php.net/package/APC">APC</a></li>
+<li><a href="http://www.php.net/manual/en/mcrypt.installation.php">mcrypt</a></li>
+<li><a href="http://www.php.net/manual/en/memcache.installation.php">Memcache</a></li>
+<li><a href="http://www.php.net/manual/en/image.installation.php">GD</a></li>
+</ul>
 
 
+<p>當我們測試完Yii Requirements，可以打開yii demo頁來看看：</p>
 
-<article>
-  
-<h1><a href="/blog/2012/01/28/preparation/">[Yii]Ch.0-2 事前準備</a></h1>
-<time datetime="2012-01-28T16:21:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>28</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a></span>
-</footer>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>http://localhost/yii/demos/blog
+</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p>可以看到一個採用YiiFramework的Blog：</p>
+
+<p><img src="/images/article/ch0_3_02.PNG" alt="Yii Blog Demo" /></p>
+
+<p>到這邊為止，可能會遇到Demo頁面遇到以下狀況：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Application runtime path <span class="s2">&quot;/var/www/html/yii/demos/blog/protected/runtime&quot;</span> is not valid. Please make sure it is a directory writable by the Web server process.
+</span></code></pre></td></tr></table></div></figure>
 
 
+<p>或者是</p>
 
-<article>
-  
-<h1><a href="/blog/2012/01/22/why-use-yii/">[Yii]Ch.0-1 YiiFramework簡介 </a></h1>
-<time datetime="2012-01-22T19:55:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>22</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a></span>
-</footer>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>CAssetManager.basePath <span class="s2">&quot;/var/www/html/yii/demos/blog/assets&quot;</span> is invalid. Please make sure the directory exists and is writable by the Web server process.
+</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/01/19/yii-zhhant-tutorial-catelog/">[Yii]繁體中文教程大綱</a></h1>
-<time datetime="2012-01-19T01:03:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>19</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/01/11/yii-assign-attributes/">[Yii]Assign Attribute&#8217;s issue</a></h1>
-<time datetime="2012-01-11T15:28:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>11</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/yii/'>yii</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/01/05/switching-from-tumblr-to-octopress/">轉換至Octopress.</a></h1>
-<time datetime="2012-01-05T18:19:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>05</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/tumblr/'>tumblr</a></span>
-</footer>
-
-
-</article>
-
+<p>這時只要修改一下<strong>assets</strong>跟<strong>protected/runtime</strong>的資料夾權限讓php可以存取，就沒有問題了:)</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Aaron Huang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-09T16:52:00+08:00" pubdate data-updated="true">Feb 9<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yin/'>yin</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.buginception.com/blog/2012/02/09/yii-environment/" data-via="" data-counturl="http://blog.buginception.com/blog/2012/02/09/yii-environment/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/01/28/preparation/" title="Previous Post: [Yii]Ch.0-2 事前準備">&laquo; [Yii]Ch.0-2 事前準備</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -296,7 +356,10 @@ Jan 28 2012 posted in php, tutorial, yii [Yii]Ch.0-1 &hellip;">
       var disqus_shortname = 'aar0n-blog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.buginception.com/blog/2012/02/09/yii-environment/';
+        var disqus_url = 'http://blog.buginception.com/blog/2012/02/09/yii-environment/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
