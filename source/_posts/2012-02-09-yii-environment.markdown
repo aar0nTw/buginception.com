@@ -3,7 +3,7 @@ layout: post
 title: "[Yii]Ch.0-3 Yii環境建置"
 date: 2012-02-09 16:52
 comments: true
-categories: [php,yin,tutorial]
+categories: [php,yii,tutorial]
 ---
 這一篇可能是一個比較短的篇幅，來講環境建置的部份，上一篇已經有稍微的講到了環境需求，那我也不在重複一次，接著請下載最新的YiiFramework
 
