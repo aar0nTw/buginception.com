@@ -4,7 +4,7 @@
   <title><![CDATA[[bug:inception]]]></title>
   <link href="http://blog.buginception.com/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-02-11T00:13:49+08:00</updated>
+  <updated>2012-02-14T23:53:45+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -234,6 +234,7 @@
 <li>別名與命名空間</li>
 <li>流程管理</li>
 <li>Gii</li>
+<li>Migration</li>
 </ul>
 </li>
 <li>Ch.3 Model

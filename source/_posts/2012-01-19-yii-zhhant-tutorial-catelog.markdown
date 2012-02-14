@@ -33,6 +33,7 @@ categories: [php,yii,tutorial]
 	* 別名與命名空間
 	* 流程管理
 	* Gii
+	* Migration
 4. Ch.3 Model
 	* Model概述與建立Model
 	* DAO
