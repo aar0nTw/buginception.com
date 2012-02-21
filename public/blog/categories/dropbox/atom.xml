@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: dropbox | [bug:inception]]]></title>
+  <link href="http://blog.buginception.com/blog/categories/dropbox/atom.xml" rel="self"/>
+  <link href="http://blog.buginception.com/"/>
+  <updated>2012-02-22T02:46:05+08:00</updated>
+  <id>http://blog.buginception.com/</id>
+  <author>
+    <name><![CDATA[Aaron Huang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[用Dropbox來當做Git remote]]></title>
+    <link href="http://blog.buginception.com/blog/2012/02/22/use-git-on-dropbox/"/>
+    <updated>2012-02-22T01:54:00+08:00</updated>
+    <id>http://blog.buginception.com/blog/2012/02/22/use-git-on-dropbox</id>
+    <content type="html"><![CDATA[<p>這篇筆記兼分享一下如何使用<a href="www.dropbox.com">Dropbox</a>簡單建立git remote進行多人協同開發。</p>
+
+<p>當然不是單純的把專案開在Dropbox folder而已，那Source可是會亂掉的:P</p>
+
+<!-- more -->
+
+
+<p>首先我們在Dropbox建立一個資料夾專門放我們的Project</p>
+
+<p><code>bash
+~$ cd Dropbox
+~/Dropbox$ mkdir project
+</code></p>
+
+<p>接著建立一個放置repo的資料夾，並且建立git repo</p>
+
+<p><code>bash
+~/Dropbox$ cd project
+~/Dropbox/project$ mkdir myproj.git
+~/Dropbox/project$ cd myproj.git
+~/Dropbox/project/myproj.git$ git init --bare
+</code>
+這邊用了<code>git init --bare</code>這個指令，它並不會產生<code>.git</code>資料夾，而是會把<code>.git</code>裡面的內容直接產生在目錄下面，並且在往後commit/push到這裡的更動，是不存下source code的，你需要將更動<strong>拉回家</strong>才會有所動作，但是這裡仍然記錄了所有的變動，<code>git init --bare</code>很適合拿來節省空間。</p>
+
+<p>而且使用Dropbox來做remote你也不希望電腦裡有兩份一樣的code在不同的資料夾下吧:)。</p>
+
+<p>接著，我們到本機的repo底下用Dropbox的路徑設定一個新的remote，並且push master branch到<strong>dropbox</strong> remote</p>
+
+<p><code>bash
+~/myproj$ git remote add dropbox ~/Dropbox/project/myproj.git
+~/myproj$ git push dropbox master
+</code>
+接著把Dropbox裡的repo分享給要co-work的人，對方用同樣的方式在設定一次remote，大功告成:)</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>[Yii]繁體中文教程大綱 - [bug:inception]</title>
+  <title>用Dropbox來當做Git remote - [bug:inception]</title>
   <meta name="author" content="Aaron Huang">
 
   
-  <meta name="description" content="用PHP&amp;YiiFramework開發專案也一年多了,心中一直有個小小的計畫,Yii大部分的中文資源都是簡體中文,一直想要動筆寫YiiFramework的繁體中文tutorial,但是自己本身也有工作,所以在這篇文章裡面我想先訂出整個教程的大綱 撰寫方面, &hellip;">
+  <meta name="description" content="這篇筆記兼分享一下如何使用Dropbox簡單建立git remote進行多人協同開發。 當然不是單純的把專案開在Dropbox folder而已，那Source可是會亂掉的:P 首先我們在Dropbox建立一個資料夾專門放我們的Project 1
+2
+~$ cd Dropbox
+~/Dropbox &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.buginception.com/blog/2012/01/19/yii-zhhant-tutorial-catelog">
+  <link rel="canonical" href="http://blog.buginception.com/blog/2012/02/22/use-git-on-dropbox">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -140,7 +143,7 @@
   
   <header>
     
-      <h1 class="entry-title">[Yii]繁體中文教程大綱</h1>
+      <h1 class="entry-title">用Dropbox來當做Git Remote</h1>
     
     
       <p class="meta">
@@ -156,7 +159,7 @@
   
 
 
-<time datetime="2012-01-19T01:03:00+08:00" pubdate data-updated="true">Jan 19<span>th</span>, 2012</time>
+<time datetime="2012-02-22T01:54:00+08:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -165,80 +168,49 @@
   </header>
 
 
-<div class="entry-content"><p>用PHP&amp;YiiFramework開發專案也一年多了,心中一直有個小小的計畫,Yii大部分的中文資源都是簡體中文,一直想要動筆寫YiiFramework的繁體中文tutorial,但是自己本身也有工作,所以在這篇文章裡面我想先訂出整個教程的大綱</p>
+<div class="entry-content"><p>這篇筆記兼分享一下如何使用<a href="www.dropbox.com">Dropbox</a>簡單建立git remote進行多人協同開發。</p>
 
-<p>撰寫方面,基本上我會參考官方英文版的教程加上我個人在開發專案上的經驗來完成這個繁體中文的文件</p>
-
-<p>當然,這個大綱頁面的內容可能會無限制的增加:),想到可以寫的就會加上,直到我寫不下去為止</p>
-
-<p>另外未來如果在文章上有任何的錯誤,歡迎提出指正</p>
+<p>當然不是單純的把專案開在Dropbox folder而已，那Source可是會亂掉的:P</p>
 
 <!-- more -->
 
 
-<ol>
-<li>Ch.0 為何採用Yii?
+<p>首先我們在Dropbox建立一個資料夾專門放我們的Project</p>
 
-<ul>
-<li><a href="/blog/2012/01/22/why-use-yii/">Yii簡介</a></li>
-<li><a href="/blog/2012/01/28/preparation/">事前準備</a></li>
-<li><a href="/blog/2012/02/09/yii-environment/">環境建置</a></li>
-<li>使用yiic建立第一個webapp</li>
-</ul>
-</li>
-<li>Ch.1 從基礎開始:
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>~<span class="nv">$ </span><span class="nb">cd </span>Dropbox
+</span><span class='line'>~/Dropbox<span class="nv">$ </span>mkdir project
+</span></code></pre></td></tr></table></div></figure>
 
-<ul>
-<li>MVC架構</li>
-<li>引導頁面(bootstrap)</li>
-<li>Yii應用設定</li>
-<li>Controller</li>
-<li>Model</li>
-<li>View</li>
-</ul>
-</li>
-<li>Ch.2 快速建構:
 
-<ul>
-<li>Component</li>
-<li>使用者與認證</li>
-<li>模組化</li>
-<li>別名與命名空間</li>
-<li>流程管理</li>
-<li>Gii</li>
-<li>Migration</li>
-</ul>
-</li>
-<li>Ch.3 Model
+<p>接著建立一個放置repo的資料夾，並且建立git repo</p>
 
-<ul>
-<li>Model概述與建立Model</li>
-<li>DAO</li>
-<li>屬性規則</li>
-<li>查詢範圍</li>
-<li>資料關連</li>
-<li>Criteria簡介</li>
-</ul>
-</li>
-<li>Ch.4 Controller
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>~/Dropbox<span class="nv">$ </span><span class="nb">cd </span>project
+</span><span class='line'>~/Dropbox/project<span class="nv">$ </span>mkdir myproj.git
+</span><span class='line'>~/Dropbox/project<span class="nv">$ </span><span class="nb">cd </span>myproj.git
+</span><span class='line'>~/Dropbox/project/myproj.git<span class="nv">$ </span>git init --bare
+</span></code></pre></td></tr></table></div></figure>
 
-<ul>
-<li>Controller概述</li>
-<li>建立Action</li>
-<li>權限控管</li>
-</ul>
-</li>
-<li>Ch.5 Criteria 查詢標準</li>
-<li>Ch.6 View
 
-<ul>
-<li>使用template</li>
-<li>Yii helper</li>
-<li>JavaScript部分</li>
-</ul>
-</li>
-</ol>
+<p>這邊用了<code>git init --bare</code>這個指令，它並不會產生<code>.git</code>資料夾，而是會把<code>.git</code>裡面的內容直接產生在目錄下面，並且在往後commit/push到這裡的更動，是不存下source code的，你需要將更動<strong>拉回家</strong>才會有所動作，但是這裡仍然記錄了所有的變動，<code>git init --bare</code>很適合拿來節省空間。</p>
 
+<p>而且使用Dropbox來做remote你也不希望電腦裡有兩份一樣的code在不同的資料夾下吧:)。</p>
+
+<p>接著，我們到本機的repo底下用Dropbox的路徑設定一個新的remote，並且push master branch到<strong>dropbox</strong> remote</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>~/myproj<span class="nv">$ </span>git remote add dropbox ~/Dropbox/project/myproj.git
+</span><span class='line'>~/myproj<span class="nv">$ </span>git push dropbox master
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接著把Dropbox裡的repo分享給要co-work的人，對方用同樣的方式在設定一次remote，大功告成:)</p>
 </div>
 
 
@@ -261,12 +233,12 @@
   
 
 
-<time datetime="2012-01-19T01:03:00+08:00" pubdate data-updated="true">Jan 19<span>th</span>, 2012</time>
+<time datetime="2012-02-22T01:54:00+08:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a>
+    <a class='category' href='/blog/categories/dropbox/'>dropbox</a>, <a class='category' href='/blog/categories/git/'>git</a>
   
 </span>
 
@@ -275,7 +247,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.buginception.com/blog/2012/01/19/yii-zhhant-tutorial-catelog/" data-via="" data-counturl="http://blog.buginception.com/blog/2012/01/19/yii-zhhant-tutorial-catelog/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.buginception.com/blog/2012/02/22/use-git-on-dropbox/" data-via="" data-counturl="http://blog.buginception.com/blog/2012/02/22/use-git-on-dropbox/" >Tweet</a>
   
   
   
@@ -286,10 +258,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/01/11/yii-assign-attributes/" title="Previous Post: [Yii]Assign Attribute's issue">&laquo; [Yii]Assign Attribute's issue</a>
+        <a class="basic-alignment left" href="/blog/2012/02/09/yii-environment/" title="Previous Post: [Yii]Ch.0-3 Yii環境建置">&laquo; [Yii]Ch.0-3 Yii環境建置</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/01/22/why-use-yii/" title="next Post: [Yii]Ch.0-1 YiiFramework簡介 ">[Yii]Ch.0-1 YiiFramework簡介  &raquo;</a>
       
     </p>
   </footer>
@@ -360,8 +330,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.buginception.com/blog/2012/01/19/yii-zhhant-tutorial-catelog/';
-        var disqus_url = 'http://blog.buginception.com/blog/2012/01/19/yii-zhhant-tutorial-catelog/';
+        var disqus_identifier = 'http://blog.buginception.com/blog/2012/02/22/use-git-on-dropbox/';
+        var disqus_url = 'http://blog.buginception.com/blog/2012/02/22/use-git-on-dropbox/';
         var disqus_script = 'embed.js';
       
     (function () {
