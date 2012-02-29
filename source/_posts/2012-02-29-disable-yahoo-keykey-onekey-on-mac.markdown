@@ -16,7 +16,7 @@ Yahoo!輸入法算是Mac上好用的注音輸入法了，但是內建的一點�
 
 把內容的：
 
-```xml
+```xml com.yahoo.KeyKey.OneKey.plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -38,16 +38,6 @@ Yahoo!輸入法算是Mac上好用的注音輸入法了，但是內建的一點�
 
 附上我的:
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>ShortcutKey</key>
-	<string>
-</string>
-</dict>
-</plist>
-```
+{% include_code com.yahoo.KeyKey.OneKey.plist lang:xml %}
 
 因為我也沒去試別的改法XDrz
