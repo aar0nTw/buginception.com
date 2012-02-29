@@ -27,7 +27,27 @@ Yahoo!輸入法算是Mac上好用的注音輸入法了，但是內建的一點�
 </plist>
 ```
 
-```<string>`</string>```的部份改掉即可:D
+``<string>`</string>`` 的部份改掉即可:D
 
 
 <!-- more -->
+
+**Update:**
+
+有Ptt板友指出要一定要改成空格換行才行
+
+附上我的:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ShortcutKey</key>
+	<string>
+</string>
+</dict>
+</plist>
+```
+
+因為我也沒去試別的改法XDrz

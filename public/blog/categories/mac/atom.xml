@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mac | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-02-29T23:57:36+08:00</updated>
+  <updated>2012-03-01T00:45:57+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -43,10 +43,33 @@
 </plist>
 ```</p>
 
-<p><code>&lt;string&gt;`&lt;/string&gt;</code>的部份改掉即可:D</p>
+<p><code>&lt;string&gt;`&lt;/string&gt;</code> 的部份改掉即可:D</p>
 
 <!-- more -->
 
+
+<p><strong>Update:</strong></p>
+
+<p>有Ptt板友指出要一定要改成空格換行才行</p>
+
+<p>附上我的:</p>
+
+<p>```xml
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict></p>
+
+<pre><code>&lt;key&gt;ShortcutKey&lt;/key&gt;
+&lt;string&gt;
+</code></pre>
+
+<p></string>
+</dict>
+</plist>
+```</p>
+
+<p>因為我也沒去試別的改法XDrz</p>
 ]]></content>
   </entry>
   
