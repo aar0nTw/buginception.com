@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: tutorial - [bug:inception]</title>
+  <title>[OSX]關閉Yahoo!輸入法的一點通服務 - [bug:inception]</title>
   <meta name="author" content="Aaron Huang">
 
   
-  <meta name="description" content="Category: tutorial">
+  <meta name="description" content="Yahoo!輸入法算是Mac上好用的注音輸入法了，但是內建的一點通服務不能關閉，只能在 ` 或是 ~ 擇一當快速鍵，
+偏偏 ` 常常用到，~就是homedir…用哪個都不對囧，而且不管在中文還是英文輸入模式都會開啟，真的是擾民。 上網搜尋了一下，都是Windows底下的強制關閉方式， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.buginception.comblog/categories/tutorial">
+  <link rel="canonical" href="http://blog.buginception.com/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -137,78 +138,129 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Tutorial</h1>
+    
+      <h1 class="entry-title">[OSX]關閉Yahoo!輸入法的一點通服務</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-29T23:38:00+08:00" pubdate data-updated="true">Feb 29<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Yahoo!輸入法算是Mac上好用的注音輸入法了，但是內建的一點通服務不能關閉，只能在 ` 或是 ~ 擇一當快速鍵，
+偏偏 ` 常常用到，~就是homedir…用哪個都不對囧，而且不管在中文還是英文輸入模式都會開啟，真的是擾民。</p>
 
-  
-  <h2>2012</h2>
+<p>上網搜尋了一下，都是Windows底下的強制關閉方式，OSX的倒是一篇都沒看到，想想既然windows版的也是用plist當設定檔，Mac上絕對也是一樣吧XD？找了一下，一點通Perference的設定檔是在：</p>
 
-<article>
-  
-<h1><a href="/blog/2012/02/09/yii-environment/">[Yii]Ch.0-3 Yii環境建置</a></h1>
-<time datetime="2012-02-09T16:52:00+08:00" pubdate><span class='month'>Feb</span> <span class='day'>09</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a></span>
-</footer>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>~/Library/Preferences/com.yahoo.KeyKey.OneKey.plist
+</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p>把內容的：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+</span><span class='line'><span class="cp">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span>
+</span><span class='line'><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;dict&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;key&gt;</span>ShortcutKey<span class="nt">&lt;/key&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;string&gt;</span>`<span class="nt">&lt;/string&gt;</span>
+</span><span class='line'><span class="nt">&lt;/dict&gt;</span>
+</span><span class='line'><span class="nt">&lt;/plist&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
+<p><code>&lt;string&gt;`&lt;/string&gt;</code>的部份改掉即可:D</p>
 
-<article>
-  
-<h1><a href="/blog/2012/01/28/preparation/">[Yii]Ch.0-2 事前準備</a></h1>
-<time datetime="2012-01-28T16:21:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>28</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/01/22/why-use-yii/">[Yii]Ch.0-1 YiiFramework簡介 </a></h1>
-<time datetime="2012-01-22T19:55:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>22</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/01/19/yii-zhhant-tutorial-catelog/">[Yii]繁體中文教程大綱</a></h1>
-<time datetime="2012-01-19T01:03:00+08:00" pubdate><span class='month'>Jan</span> <span class='day'>19</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a></span>
-</footer>
-
-
-</article>
+<!-- more -->
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Aaron Huang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-29T23:38:00+08:00" pubdate data-updated="true">Feb 29<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/mac/'>mac</a>, <a class='category' href='/blog/categories/osx/'>osx</a>, <a class='category' href='/blog/categories/yahoo-keykey/'>yahoo!keykey</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.buginception.com/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/" data-via="" data-counturl="http://blog.buginception.com/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/02/22/use-git-on-dropbox/" title="Previous Post: 用Dropbox來當做Git remote">&laquo; 用Dropbox來當做Git remote</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -268,7 +320,10 @@
       var disqus_shortname = 'aar0n-blog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.buginception.com/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/';
+        var disqus_url = 'http://blog.buginception.com/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

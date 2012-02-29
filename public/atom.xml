@@ -4,7 +4,7 @@
   <title><![CDATA[[bug:inception]]]></title>
   <link href="http://blog.buginception.com/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-02-28T18:26:05+08:00</updated>
+  <updated>2012-02-29T23:57:36+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -12,6 +12,49 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[[OSX]關閉Yahoo!輸入法的一點通服務]]></title>
+    <link href="http://blog.buginception.com/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/"/>
+    <updated>2012-02-29T23:38:00+08:00</updated>
+    <id>http://blog.buginception.com/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac</id>
+    <content type="html"><![CDATA[<p>Yahoo!輸入法算是Mac上好用的注音輸入法了，但是內建的一點通服務不能關閉，只能在 ` 或是 ~ 擇一當快速鍵，
+偏偏 ` 常常用到，~就是homedir…用哪個都不對囧，而且不管在中文還是英文輸入模式都會開啟，真的是擾民。</p>
+
+<p>上網搜尋了一下，都是Windows底下的強制關閉方式，OSX的倒是一篇都沒看到，想想既然windows版的也是用plist當設定檔，Mac上絕對也是一樣吧XD？找了一下，一點通Perference的設定檔是在：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>~/Library/Preferences/com.yahoo.KeyKey.OneKey.plist
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>把內容的：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+</span><span class='line'><span class="cp">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span>
+</span><span class='line'><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;dict&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;key&gt;</span>ShortcutKey<span class="nt">&lt;/key&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;string&gt;</span>`<span class="nt">&lt;/string&gt;</span>
+</span><span class='line'><span class="nt">&lt;/dict&gt;</span>
+</span><span class='line'><span class="nt">&lt;/plist&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>&lt;string&gt;`&lt;/string&gt;</code>的部份改掉即可:D</p>
+
+<!-- more -->
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[用Dropbox來當做Git remote]]></title>
