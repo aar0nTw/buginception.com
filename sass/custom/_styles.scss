@@ -2,4 +2,33 @@
 // Add styles here to make changes without digging in too much
 body > header {
    background: image-url('head.png') no-repeat;
+   padding-bottom: 0.5em;
+   h1{
+	-webkit-border-radius: 10px;  
+        -moz-border-radius: 10px;  
+        -ms-border-radius: 10px;  
+        border-radius: 10px;
+	background: #C03;
+	width: 90px;
+	height: 90px;
+	overflow: hidden;
+	a,a:hover,a:active,a:visited{
+		display:block;
+		color: #CCC;
+		//text-decoration: none;
+		font-size: 16pt;
+		-webkit-transform: rotate(-35deg);
+		-webkit-transform-origin: 50px 50px;
+                -moz-transform: rotate(-35deg);
+                -moz-transform-origin: 50px 50px;
+                -ms-transform: rotate(-35deg);
+                -ms-transform-origin: 50px 50px;
+                transform: rotate(-35deg);
+                transform-origin: 50px 50px;		
+	}
+   }
+
+   h2{
+	font-size:0.6em;
+   }
 }
