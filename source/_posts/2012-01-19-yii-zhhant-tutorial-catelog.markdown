@@ -18,7 +18,7 @@ categories: [php,yii,tutorial]
 	* [Yii簡介](/blog/2012/01/22/why-use-yii/)
 	* [事前準備](/blog/2012/01/28/preparation/)
 	* [環境建置](/blog/2012/02/09/yii-environment/)
-	* 使用yiic建立第一個webapp
+	* [使用yiic建立第一個webapp] (/blog/2012/03/23/yii-say-hello-for-world/)
 2. Ch.1 從基礎開始:
 	* MVC架構
 	* 引導頁面(bootstrap)
