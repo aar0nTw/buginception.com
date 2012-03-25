@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tutorial | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/tutorial/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-03-25T19:34:35+08:00</updated>
+  <updated>2012-03-25T19:36:47+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -314,7 +314,7 @@ CAssetManager.basePath "/var/www/html/yii/demos/blog/assets" is invalid. Please 
 <li><a href="/blog/2012/01/22/why-use-yii/">Yii簡介</a></li>
 <li><a href="/blog/2012/01/28/preparation/">事前準備</a></li>
 <li><a href="/blog/2012/02/09/yii-environment/">環境建置</a></li>
-<li>[使用yiic建立第一個webapp] (/blog/2012/03/23/yii-say-hello-for-world/)</li>
+<li><a href="/blog/2012/03/23/yii-say-hello-for-world/">使用yiic建立第一個webapp</a></li>
 </ul>
 </li>
 <li>Ch.1 從基礎開始:
