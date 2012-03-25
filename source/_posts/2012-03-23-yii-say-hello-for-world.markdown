@@ -22,6 +22,7 @@ $ git clone https://github.com/yiisoft/yii.git
 ```bash
 $ yiic webapp ~/htdocs/demo
 ```
+<!-- more -->
 
 yiic是YiiFramework內建的一個console工具可以快速建立web app，作migration，shell模式下可以建立model，scaffold，module等等，建議使用強大的網頁介面Gii，不過我還是習慣用console :D
 

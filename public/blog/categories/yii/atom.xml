@@ -4,7 +4,7 @@
   <title><![CDATA[Category: yii | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/yii/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-03-25T18:27:39+08:00</updated>
+  <updated>2012-03-25T19:05:04+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -33,6 +33,9 @@ $ git clone https://github.com/yiisoft/yii.git
 <p><code>bash
 $ yiic webapp ~/htdocs/demo
 </code></p>
+
+<!-- more -->
+
 
 <p>yiic是YiiFramework內建的一個console工具可以快速建立web app，作migration，shell模式下可以建立model，scaffold，module等等，建議使用強大的網頁介面Gii，不過我還是習慣用console :D</p>
 
