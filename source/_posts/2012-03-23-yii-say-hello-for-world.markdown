@@ -104,6 +104,6 @@ protected資料夾簡單分成幾個部分：
 
 **controllers**,**models**,**views**三個資料夾是放置mvc結構的檔案，**controllers**裡面的class name跟views裡的檔案結構是有相對應的關係的，預設裡面有一個**SiteController**，**views**裡面會有相對應的**site**資料夾存放他的前端呈現的頁面。**models**則是放置了所有資料庫相關的**ActiveRecord** Class。
 
-**tests**資料夾則是放置PHPUnit的測試scripts，使用gii或是yiic shell產生Model時，會自動的產生出相對應的ModelTest類別，對有做單元測試的開發者來講可以相當方便的使用PHPUnit來作測試，也可以使用Selenium來作。
+**tests**資料夾則是放置PHPUnit的測試scripts，使用gii或是yiic shell產生Model時，會自動的產生出相對應的ModelTest類別，對有做單元測試的開發者來講可以相當方便的使用PHPUnit來作測試，也支援使用Selenium來作功能測試。
 
 Yii整體的優點其實很多，就這篇的資料夾結構來講可以看出，其Yii已經幫你產出了測試框架，在做UnitTest,Functional Test可以很快的進入狀況，尤其實你是屬於採用TDD方法來開發的開發者。:)
