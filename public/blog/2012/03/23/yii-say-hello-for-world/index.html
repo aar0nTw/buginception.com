@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>[Yii]Ch.0-4 建立第一個Web app - [bug:inception]</title>
+  <meta name="author" content="Aaron Huang">
+
+  
+  <meta name="description" content="最近公事繁忙，一回神已經兩週沒更新blog了orz。
+現在Yii framework，已經merge到github上了，可以clone下來對yii作版本管理:) 1
+$ git clone https://github.com/yiisoft/yii.git 前面講到的部分， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.buginception.com/blog/2012/03/23/yii-say-hello-for-world">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="[bug:inception]" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<style>
+#banner_git{
+			height: 149px;
+			width: 149px;
+			overflow:hidden;
+			padding: 0;
+			margin: 0;
+			background: none;
+			position:absolute;
+			top:0;
+			right:0;
+			border-bottom:none;
+		}
+		
+		#banner_git a{
+			
+			display: block;
+			width: 190px;
+			font-size: 14px;
+			font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", 
+				"Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, 
+				Geneva, "Helvetica Neue", Helvetica, Arial, sans serif;
+			background-color: #333;
+			color: #FFF;
+			word-spacing: 2px;
+			text-decoration: none;
+			padding: 5px 15px 5px 25px;
+			
+			position:relative;
+			left: 20px;
+			top: -37px;
+			text-align: center;
+			
+			-moz-transform-origin: 0 0 ;
+			-moz-transform:rotate(45deg);
+			-moz-box-shadow:    1px 1px 5px 1px #666;
+			
+			-webkit-transform-origin: 0 0 ;	
+			-webkit-transform:rotate(45deg);
+			-webkit-box-shadow: 1px 1px 5px 1px #666;
+			
+			-ms-transform-origin: 0 0 ;	
+			-ms-transform:rotate(45deg);
+			-ms-box-shadow: 1px 1px 5px 1px #666;
+			
+			transform-origin: 0 0 ;	
+			transform:rotate(45deg);
+			box-shadow: 1px 1px 5px 1px #666;
+			
+			background-image: linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			background-image: -o-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			background-image: -moz-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			background-image: -webkit-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			background-image: -ms-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			
+			background-image: -webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(0.03, #000000),
+				color-stop(0.05, #666666),
+				color-stop(0.07, #000000),
+				color-stop(0.93, #000000),
+				color-stop(0.95, #666666),
+				color-stop(0.97, #000000)
+			);	
+			
+		}
+
+</style>
+
+  
+
+</head>
+
+<body   >
+   <div id="banner_git"><a href="https://github.com/aar0ntw">Fork me on GitHub</a></div>
+  <header role="banner"><hgroup>
+  <h1><a href="/">[bug:inception]</a></h1>
+  
+    <h2>#define TRUE FALSE;</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.buginception.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About me</a></li>
+  <li><a href="/blog/2012/01/19/yii-zhhant-tutorial-catelog/">YiiFramework</a></li>
+  <li><a href="https://trello.com/b/NPAEWvsK" target=_blank>讀書清單</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">[Yii]Ch.0-4 建立第一個Web App</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-23T19:25:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><blockquote><p>最近公事繁忙，一回神已經兩週沒更新blog了orz。
+現在Yii framework，已經merge到github上了，可以clone下來對yii作版本管理:)</p></blockquote>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone https://github.com/yiisoft/yii.git
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>前面講到的部分，基本上是屬於環境配置的部分，接下來我們要正式的進入實作階段:)</p>
+
+<p>首先建立一個新的Web App
+（這邊以~/htdocs 為網站根目錄）</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>yiic webapp ~/htdocs/demo
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>yiic是YiiFramework內建的一個console工具可以快速建立web app，作migration，shell模式下可以建立model，scaffold，module等等，建議使用強大的網頁介面Gii，不過我還是習慣用console :D</p>
+
+<p>建立了一個新的web app之後，首先我們可以看到資料夾內作為bootstrap的index.php，這邊稍微簡單講一下：</p>
+
+<figure class='code'><figcaption><span>index.php</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// change the following paths if necessary</span>
+</span><span class='line'><span class="nv">$yii</span><span class="o">=</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;/../yii/framework/yii.php&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$config</span><span class="o">=</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;/protected/config/main.php&#39;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// remove the following lines when in production mode</span>
+</span><span class='line'><span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;YII_DEBUG&#39;</span><span class="p">)</span> <span class="k">or</span> <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;YII_DEBUG&#39;</span><span class="p">,</span><span class="k">true</span><span class="p">);</span>
+</span><span class='line'><span class="c1">// specify how many levels of call stack should be shown in each log message</span>
+</span><span class='line'><span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;YII_TRACE_LEVEL&#39;</span><span class="p">)</span> <span class="k">or</span> <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;YII_TRACE_LEVEL&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">require_once</span><span class="p">(</span><span class="nv">$yii</span><span class="p">);</span>
+</span><span class='line'><span class="nx">Yii</span><span class="o">::</span><span class="na">createWebApplication</span><span class="p">(</span><span class="nv">$config</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>可以看到require了yii.php（Production環境可以改用yiilite.php），定義了DEBUG跟TRACE_LEVEL。
+這兩個常數會決定yii會不會寫入log，以及log與錯誤訊息顯示的詳細程度。</p>
+
+<p>Production環境中為了提高app的performance這兩個常數會定義為false跟0。</p>
+
+<p>然後我們可以看到Yii將會以$config變數指定的config檔案開啟一個yii app。</p>
+
+<p>首先我們要了解一下Yii的檔案結構:</p>
+
+<figure class='code'><figcaption><span>demo/</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>drwxrwxrwx   3 aaron  staff  102 Mar 23 16:36 assets
+</span><span class='line'>drwxr-xr-x   8 aaron  staff  272 Mar 23 11:39 css
+</span><span class='line'>drwxr-xr-x   2 aaron  staff   68 Mar 23 11:39 images
+</span><span class='line'>-rw-r--r--   1 aaron  staff  497 Mar 23 11:41 index-test.php
+</span><span class='line'>-rw-r--r--   1 aaron  staff  574 Mar 25 03:35 index.php
+</span><span class='line'>drwxr-xr-x  18 aaron  staff  612 Mar 23 11:39 protected
+</span><span class='line'>drwxr-xr-x   3 aaron  staff  102 Mar 23 11:39 themes
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>assets的部分，其實就是運用<code>CAssetsManager</code>類別來控管或自動產出包括js,css等有可能造成衝突的檔案，有機會在詳細的討論，css,images，可以不透過Yii直接引用的靜態css,image檔案，theme則是不使用預設的them template時，放上自己或是別人寫的theme。 protected資料夾則是整個yii app的靈魂所在，這邊我們就另外的來看一下。</p>
+
+<figure class='code'><figcaption><span>demo/protected/</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>   -protected
+</span><span class='line'>   |---commands
+</span><span class='line'>   |-----shell
+</span><span class='line'>   |---components
+</span><span class='line'>   |---config
+</span><span class='line'>   |---controllers
+</span><span class='line'>   |---data
+</span><span class='line'>   |---extensions
+</span><span class='line'>   |---messages
+</span><span class='line'>   |---migrations
+</span><span class='line'>   |---models
+</span><span class='line'>   |---runtime
+</span><span class='line'>   |---tests
+</span><span class='line'>   |-----fixtures
+</span><span class='line'>   |-----functional
+</span><span class='line'>   |-----report
+</span><span class='line'>   |-----unit
+</span><span class='line'>   |---views
+</span><span class='line'>   |-----layouts
+</span><span class='line'>   |-----site
+</span><span class='line'>   |-------pages
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>protected資料夾簡單分成幾個部分：</p>
+
+<ul>
+<li>components</li>
+<li>config</li>
+<li>controllers</li>
+<li>extensions</li>
+<li>models</li>
+<li>tests</li>
+<li>views</li>
+</ul>
+
+
+<p><strong>components</strong>放置一些可以重用的開發者自行定義的元件
+<strong>config</strong>是全站的設定檔，包含網站與cosole app還有測試環境的設定</p>
+
+<p><strong>controllers</strong>,<strong>models</strong>,<strong>views</strong>三個資料夾是放置mvc結構的檔案，<strong>controllers</strong>裡面的class name跟views裡的檔案結構是有相對應的關係的，預設裡面有一個<strong>SiteController</strong>，<strong>views</strong>裡面會有相對應的<strong>site</strong>資料夾存放他的前端呈現的頁面。<strong>models</strong>則是放置了所有資料庫相關的<strong>ActiveRecord</strong> Class。</p>
+
+<p><strong>tests</strong>資料夾則是放置PHPUnit的測試scripts，使用gii或是yiic shell產生Model時，會自動的產生出相對應的ModelTest類別，對有做單元測試的開發者來講可以相當方便的使用PHPUnit來作測試，也可以使用Selenium來作。</p>
+
+<p>Yii整體的優點其實很多，就這篇的資料夾結構來講可以看出，其Yii已經幫你產出了測試框架，在做UnitTest,Functional Test可以很快的進入狀況，尤其實你是屬於採用TDD方法來開發的開發者。:)</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Aaron Huang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-23T19:25:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.buginception.com/blog/2012/03/23/yii-say-hello-for-world/" data-via="" data-counturl="http://blog.buginception.com/blog/2012/03/23/yii-say-hello-for-world/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/" title="Previous Post: [OSX]關閉Yahoo!輸入法的一點通服務">&laquo; [OSX]關閉Yahoo!輸入法的一點通服務</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/03/23/yii-say-hello-for-world/">[Yii]Ch.0-4 建立第一個Web app</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/">[OSX]關閉Yahoo!輸入法的一點通服務</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/22/use-git-on-dropbox/">用Dropbox來當做Git remote</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/09/yii-environment/">[Yii]Ch.0-3 Yii環境建置</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/28/preparation/">[Yii]Ch.0-2 事前準備</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+    <ul id="category-list"><li><a href='/blog/categories/blog'>Blog (1)</a></li><li><a href='/blog/categories/dropbox'>Dropbox (1)</a></li><li><a href='/blog/categories/git'>Git (1)</a></li><li><a href='/blog/categories/mac'>Mac (1)</a></li><li><a href='/blog/categories/octopress'>Octopress (1)</a></li><li><a href='/blog/categories/osx'>Osx (1)</a></li><li><a href='/blog/categories/php'>Php (4)</a></li><li><a href='/blog/categories/tumblr'>Tumblr (1)</a></li><li><a href='/blog/categories/tutorial'>Tutorial (5)</a></li><li><a href='/blog/categories/yahoo-keykey'>Yahoo!keykey (1)</a></li><li><a href='/blog/categories/yii'>Yii (6)</a></li></ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Aaron Huang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'aar0n-blog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.buginception.com/blog/2012/03/23/yii-say-hello-for-world/';
+        var disqus_url = 'http://blog.buginception.com/blog/2012/03/23/yii-say-hello-for-world/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
