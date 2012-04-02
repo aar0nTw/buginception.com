@@ -9,7 +9,7 @@
   <meta name="author" content="Aaron Huang">
 
   
-  <meta name="description" content="相信 Redmine 是很多人在使用的專案管理系統，而 Git，相信也是各種 SCM 裡的大宗，而應該滿多人使用 gitolite 來控管自己的 git remote server 的。 之所以寫這篇，是因為小弟公司在整合兩者的時候，撞到了 gitolite 的 repo 權限問題。 &hellip;">
+  <meta name="description" content="上篇我提到了在PHP裡採用Yii框架有什麼好處，那麼這次開始就要來提到如何採用Yii，需要哪些事前準備. 用Yii來開發Web Application，你必須要有PHP的基礎這是一定的，在之後我所講的内容基本上都是預設讀者有基本的PHP知識，另外還需要有PHP OOP的相關知識或者實戰經驗。 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.buginception.com">
+  <link rel="canonical" href="http://blog.buginception.com/blog/page/2">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -155,7 +155,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/04/02/redmine-use-git-code-review/">在 Redmine 中加入 Git Repository</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/01/28/preparation/">[Yii]Ch.0-2 事前準備</a></h1>
     
     
       <p class="meta">
@@ -171,26 +171,24 @@
   
 
 
-<time datetime="2012-04-02T12:36:00+08:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2012</time>
+<time datetime="2012-01-28T16:21:00+08:00" pubdate data-updated="true">Jan 28<span>th</span>, 2012</time>
         
-         | <a href="/blog/2012/04/02/redmine-use-git-code-review/#disqus_thread">Comments</a>
+         | <a href="/blog/2012/01/28/preparation/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>相信 <a href="http://www.redmine.org/">Redmine</a> 是很多人在使用的專案管理系統，而 <a href="http://git-scm.com/">Git</a>，相信也是各種 SCM 裡的大宗，而應該滿多人使用 <a href="https://github.com/sitaramc/gitolite">gitolite</a> 來控管自己的 git remote server 的。</p>
+  <div class="entry-content"><p>上篇我提到了在PHP裡採用Yii框架有什麼好處，那麼這次開始就要來提到如何採用Yii，需要哪些事前準備.</p>
 
-<p>之所以寫這篇，是因為小弟公司在整合兩者的時候，撞到了 gitolite 的 repo 權限問題。</p>
-
-<p>所以這篇就來簡單的講解一下如何在 Redmine 裡面加入使用 gitolite 管理的 Repository ， 可在 Redmine 直接觀看 Source Repo，以及作為 Code Review 之用。</p>
+<p>用Yii來開發Web Application，你必須要有PHP的基礎這是一定的，在之後我所講的内容基本上都是預設讀者有基本的PHP知識，另外還需要有PHP OOP的相關知識或者實戰經驗。</p>
 
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2012/04/02/redmine-use-git-code-review/">Read on &rarr;</a>
+      <a rel="full-article" href="/blog/2012/01/28/preparation/">Read on &rarr;</a>
     </footer>
   
 
@@ -202,7 +200,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/03/23/yii-say-hello-for-world/">[Yii]Ch.0-4 建立第一個Web App</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/01/22/why-use-yii/">[Yii]Ch.0-1 YiiFramework簡介</a></h1>
     
     
       <p class="meta">
@@ -218,38 +216,30 @@
   
 
 
-<time datetime="2012-03-23T19:25:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+<time datetime="2012-01-22T19:55:00+08:00" pubdate data-updated="true">Jan 22<span>nd</span>, 2012</time>
         
-         | <a href="/blog/2012/03/23/yii-say-hello-for-world/#disqus_thread">Comments</a>
+         | <a href="/blog/2012/01/22/why-use-yii/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><blockquote><p>最近公事繁忙，一回神已經兩週沒更新blog了orz。
-現在Yii framework，已經merge到github上了，可以clone下來對yii作版本管理:)</p></blockquote>
+  <div class="entry-content"><p>PHP的framework非常的多樣,隨手拈來都可以講出很多,舉例如老牌的<a href="http://cakephp.org/">CakePHP</a>, <a href="http://framework.zend.com">Zend</a>, <a href="http://www.symfony-project.org/">Symfony</a>, <a href="http://codeigniter.com">CodeIgniter</a>,或者是<a href="http://www.slimframework.com">SlimFramework</a>,抑或者最近常聽到的<a href="http://fuelphp.com">fuelPHP</a>,到我所要提到的<a href="http://www.yiiframewok.com">Yii</a>.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone https://github.com/yiisoft/yii.git
-</span></code></pre></td></tr></table></div></figure>
+<p>Yii,為什麼要採用Yii? 這邊有幾點來稍微簡介一下:</p>
 
+<h3>1. High Performance</h3>
 
-<p>前面講到的部分，基本上是屬於環境配置的部分，接下來我們要正式的進入實作階段:)</p>
+<p>官網比較了同樣未採用APC與使用APC之後的RPS數據,Yii 在未使用APC的狀況下,RPS大約比CI多約15%,Cake的3倍,但在使用了APC之後Yii的RPS是CI的3倍,Cake的8倍,Symfony的13倍</p>
 
-<p>首先建立一個新的Web App
-（這邊以~/htdocs 為網站根目錄）</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>yiic webapp ~/htdocs/demo
-</span></code></pre></td></tr></table></div></figure>
-
+<p>至於Yii為何能做到?</p>
 
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2012/03/23/yii-say-hello-for-world/">Read on &rarr;</a>
+      <a rel="full-article" href="/blog/2012/01/22/why-use-yii/">Read on &rarr;</a>
     </footer>
   
 
@@ -261,7 +251,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/">[OSX]關閉Yahoo!輸入法的一點通服務</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/01/19/yii-zhhant-tutorial-catelog/">[Yii]繁體中文教程大綱</a></h1>
     
     
       <p class="meta">
@@ -277,53 +267,90 @@
   
 
 
-<time datetime="2012-02-29T23:38:00+08:00" pubdate data-updated="true">Feb 29<span>th</span>, 2012</time>
+<time datetime="2012-01-19T01:03:00+08:00" pubdate data-updated="true">Jan 19<span>th</span>, 2012</time>
         
-         | <a href="/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/#disqus_thread">Comments</a>
+         | <a href="/blog/2012/01/19/yii-zhhant-tutorial-catelog/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Yahoo!輸入法算是Mac上好用的注音輸入法了，但是內建的一點通服務不能關閉，只能在 ` 或是 ~ 擇一當快速鍵，
-偏偏 ` 常常用到，~就是homedir…用哪個都不對囧，而且不管在中文還是英文輸入模式都會開啟，真的是擾民。</p>
+  <div class="entry-content"><p>用PHP&amp;YiiFramework開發專案也一年多了,心中一直有個小小的計畫,Yii大部分的中文資源都是簡體中文,一直想要動筆寫YiiFramework的繁體中文tutorial,但是自己本身也有工作,所以在這篇文章裡面我想先訂出整個教程的大綱</p>
 
-<p>上網搜尋了一下，都是Windows底下的強制關閉方式，OSX的倒是一篇都沒看到，想想既然windows版的也是用plist當設定檔，Mac上絕對也是一樣吧XD？找了一下，一點通Perference的設定檔是在：</p>
+<p>撰寫方面,基本上我會參考官方英文版的教程加上我個人在開發專案上的經驗來完成這個繁體中文的文件</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>~/Library/Preferences/com.yahoo.KeyKey.OneKey.plist
-</span></code></pre></td></tr></table></div></figure>
+<p>當然,這個大綱頁面的內容可能會無限制的增加:),想到可以寫的就會加上,直到我寫不下去為止</p>
+
+<p>另外未來如果在文章上有任何的錯誤,歡迎提出指正</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/01/19/yii-zhhant-tutorial-catelog/">Read on &rarr;</a>
+    </footer>
+  
 
 
-<p>把內容的：</p>
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/01/11/yii-assign-attributes/">[Yii]Assign Attribute&#8217;s Issue</a></h1>
+    
+    
+      <p class="meta">
+        
 
-<figure class='code'><figcaption><span>com.yahoo.KeyKey.OneKey.plist</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-11T15:28:00+08:00" pubdate data-updated="true">Jan 11<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/11/yii-assign-attributes/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>通常情況下，我們習慣這樣來給予Model值</p>
+
+<figure class='code'><figcaption><span>FooController</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-</span><span class='line'><span class="cp">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span>
-</span><span class='line'><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;dict&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;key&gt;</span>ShortcutKey<span class="nt">&lt;/key&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;string&gt;</span>`<span class="nt">&lt;/string&gt;</span>
-</span><span class='line'><span class="nt">&lt;/dict&gt;</span>
-</span><span class='line'><span class="nt">&lt;/plist&gt;</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="c1">//....上略</span>
+</span><span class='line'><span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;Foo&#39;</span><span class="p">])){</span>
+</span><span class='line'>  <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">attributes</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;Foo&#39;</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><code>&lt;string&gt;`&lt;/string&gt;</code> 的部份改掉即可:D</p>
+<p>這叫做 <strong>massively assigned</strong></p>
 
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/">Read on &rarr;</a>
+      <a rel="full-article" href="/blog/2012/01/11/yii-assign-attributes/">Read on &rarr;</a>
     </footer>
   
 
@@ -335,7 +362,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/02/22/use-git-on-dropbox/">用Dropbox來當做Git Remote</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/01/05/switching-from-tumblr-to-octopress/">轉換至Octopress.</a></h1>
     
     
       <p class="meta">
@@ -351,88 +378,22 @@
   
 
 
-<time datetime="2012-02-22T01:54:00+08:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2012</time>
+<time datetime="2012-01-05T18:19:00+08:00" pubdate data-updated="true">Jan 5<span>th</span>, 2012</time>
         
-         | <a href="/blog/2012/02/22/use-git-on-dropbox/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>這篇筆記兼分享一下如何使用<a href="www.dropbox.com">Dropbox</a>簡單建立git remote進行多人協同開發。</p>
-
-<p>當然不是單純的把專案開在Dropbox folder而已，那Source可是會亂掉的:P</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/02/22/use-git-on-dropbox/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/09/yii-environment/">[Yii]Ch.0-3 Yii環境建置</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-09T16:52:00+08:00" pubdate data-updated="true">Feb 9<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/02/09/yii-environment/#disqus_thread">Comments</a>
+         | <a href="/blog/2012/01/05/switching-from-tumblr-to-octopress/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>這一篇可能是一個比較短的篇幅，來講環境建置的部份，上一篇已經有稍微的講到了環境需求，那我也不在重複一次，接著請下載最新的YiiFramework</p>
+  <div class="entry-content"><p>由於Tumblr 最近實在有點不穩，於是從Tumblr 轉到 Octopress</p>
 
-<blockquote><p><a href="http://www.yiiframework.com/download/">Yii 官方網站下載</a></p></blockquote>
+<p>至於Octopress有什麼好處跟特點，很多前輩高人都闡述過了，我就不多囉嗦了</p>
 
-<p>或者是github上熱心人士非官方的source，目前更新到1.1.9</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone https://github.com/dmtrs/unofficial-yii-framework-mirror.git
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>解壓縮到網站根目錄下，取個簡單的名字，例如：yii</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>tar -xzf yii-1.1.9.r3527.tar.gz
-</span><span class='line'><span class="nv">$ </span>mv ./yii-1.1.9.r3527 yii
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>接下來我們打開Yii requirement頁面來看一下yii系統需求檢查：</p>
-
+<p>如果還是想知道的請見 <a href="http://blog.xdite.net/posts/2011/10/07/what-is-octopress/">Why Octopress?</a> via xDite</p>
 </div>
   
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/02/09/yii-environment/">Read on &rarr;</a>
-    </footer>
   
 
 
@@ -440,9 +401,9 @@
   
   <div class="pagination">
     
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
     <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/">Newer &rarr;</a>
     
   </div>
 </div>
