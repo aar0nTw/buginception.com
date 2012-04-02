@@ -3,7 +3,7 @@ layout: post
 title: "在 Redmine 中加入 Git Repository"
 date: 2012-04-02 12:36
 comments: true
-categories: [Redmine,Git,gitolite]
+categories: [Redmine,git,gitolite]
 ---
 
 相信 [Redmine](http://www.redmine.org/) 是很多人在使用的專案管理系統，而 [Git](http://git-scm.com/)，相信也是各種 SCM 裡的大宗，而應該滿多人使用 [gitolite](https://github.com/sitaramc/gitolite) 來控管自己的 git remote server 的。
