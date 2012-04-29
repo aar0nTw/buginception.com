@@ -4,7 +4,7 @@
   <title><![CDATA[[bug:inception]]]></title>
   <link href="http://blog.buginception.com/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-04-29T15:05:33+08:00</updated>
+  <updated>2012-04-29T15:08:48+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -131,7 +131,7 @@ Yii 的資料庫設定中，有一項名為 schemaCachingDuration 的設定參�
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
-</span><span class='line'><span class="k">class</span> <span class="nc">FooController</span> <span class="nx">extend</span> <span class="nx">Controller</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">FooController</span> <span class="k">extends</span> <span class="nx">Controller</span>
 </span><span class='line'><span class="p">{</span>
 </span><span class='line'><span class="c1">// some code...</span>
 </span><span class='line'><span class="p">}</span>
