@@ -4,7 +4,7 @@
   <title><![CDATA[[bug:inception]]]></title>
   <link href="http://blog.buginception.com/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-04-10T03:07:01+08:00</updated>
+  <updated>2012-04-29T15:05:33+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -12,6 +12,261 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[[Yii]Ch.1-1 MVC 架構]]></title>
+    <link href="http://blog.buginception.com/blog/2012/04/25/yii-mvc-structure/"/>
+    <updated>2012-04-25T01:32:00+08:00</updated>
+    <id>http://blog.buginception.com/blog/2012/04/25/yii-mvc-structure</id>
+    <content type="html"><![CDATA[<p>MVC 模式，這個模式的概述，應該是已經講到爛掉的 topic 了，所以這篇我主要想從 Yii 對於 Model-View-Controller 的相關實作方式來切入。</p>
+
+<blockquote class="note">
+<p>
+如果真的不了解 MVC 模式，我想從 Wikipedia 開始會是不錯的選擇 XD
+</p>
+</blockquote>
+
+
+<p></p>
+
+<p>除了 MVC 模式之外，Yii 還有一個名為 Application 的 front-controller，Application 可稱為 Yii 的統整中心，負責處理並分配 User 所有的 Request，整個 Yii app 的結構可以看下面這張示意圖:</p>
+
+<p><img src="http://blog.buginception.com/images/yii-static-struct.png" alt="" /></p>
+
+<!-- more -->
+
+
+<p>Yii MVC 實作主要在下方這幾個類別</p>
+
+<ul>
+<li><strong>Model</strong> : CActiveRecord &lt; CModel</li>
+<li><strong>Controller</strong> : CController , CAction</li>
+<li><strong>View</strong> : CController , CViewRenderer , CPradoRenderer</li>
+</ul>
+
+
+<h2>Model</h2>
+
+<p>Yii 自行實作了自己的 ORM 類別： <strong>CActiveRecord</strong> ， 從名字上可以看得出來，它是以 ActiveRecord Design Pattern 做為藍本來建構的。</p>
+
+<blockquote class="note">
+<p>
+如果你同時也是個 Rails 的開發者，我想對 ActiveRecord Pattern 是在熟悉不過了。  當然，除了 Yii 之外，許多其他的 PHP framework 也有實作 ActiveRecord，包含了 CakePHP、FuelPHP、CodeIgniter 等等。
+</p>
+</blockquote>
+
+
+<p>每一個繼承自 ActiveRecord 的類別，都代表資料庫中的一張 table ，而每一個ActiveRecord 的實體都代表著一筆紀錄，資料庫的所有 CRUD 的操作都被實作在 ActiveRecord 類別裡面，因此我們可以用 OO 的方式更輕鬆的來處理我們的資料。</p>
+
+<p>舉例來說，如果我們想新增一筆資料在 Foo 這張資料表中，我們可以透過下面這樣
+的方式：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="nv">$foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$foo</span> <span class="o">-&gt;</span> <span class="na">name</span> <span class="o">=</span> <span class="s1">&#39;Bar&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$foo</span> <span class="o">-&gt;</span> <span class="na">save</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yii 中，透過了 <code>CDbConnection</code> 來處理資料庫連線的部分，可以在 <code>config/main.php</code> 中設置資料庫連線：</p>
+
+<figure class='code'><figcaption><span>config/main.php</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="err">…略</span>
+</span><span class='line'><span class="s1">&#39;db&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+</span><span class='line'>  <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;system.db.CDbConnection&#39;</span><span class="p">,</span> <span class="c1">// 預設是不需要定義 class 的</span>
+</span><span class='line'>  <span class="s1">&#39;connectionString&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sqlite:path/to/dbfile&#39;</span>
+</span><span class='line'><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果是 MySQL 設定：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="err">…略</span>
+</span><span class='line'><span class="s1">&#39;db&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+</span><span class='line'>  <span class="s1">&#39;connectionString&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql:host=yourhost;dbname=yourdbname&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s1">&#39;emulatePrepare&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+</span><span class='line'>  <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s1">&#39;charset&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
+</span><span class='line'><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<blockquote class="note">
+<p>
+Yii 的資料庫設定中，有一項名為 schemaCachingDuration 的設定參數，當這個參數的值 > 0 時，會打開資料庫 metadata 的快取，如果是在 production 環境下，資料表的結構很少變動了，應該要打開這個設定，以節省讀取資料表結構的時間。
+</p>
+</blockquote>
+
+
+<h2>Controller</h2>
+
+<p>Yii app 的 Controller 如下所示：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">FooController</span> <span class="nx">extend</span> <span class="nx">Controller</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'><span class="c1">// some code...</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>其中 <code>Controller</code> 也是繼承自 <code>CController</code>，它的位置在 <code>protected/component/</code> 資料夾下，所有透過 <strong>yiic</strong> 或是 <strong>gii</strong> 所產生的 Controller 都會繼承自 <code>Controller</code> 這個類別，方便定義全站 Controller 共同的方法與變數。</p>
+
+<p>Yii 透過 application 中的 url route 來判斷 Controller 與 Action ，不管是 Controller 或是 Action 都是透過 ID 來判斷，這之後再深入探討，簡單來說如果你希望呼叫 <code>FooController -&gt; actionBar()</code> url route 就會是 <code>foo/bar</code>。</p>
+
+<blockquote class="note">
+<p>
+你可以修改 <code>config/main.php</code> 中的 <code>urlManager</code> 來自定義 url route。
+</p>
+</blockquote>
+
+
+<p>Controller 的實作部分，可以分為 <code>CController</code> 與 <code>CAction</code>這兩個模組來解釋，<code>CController</code> 類別與其子類別回應使用者的 Request 並將其對應到 Action。 一個使用者發送 Request 到 <code>actionBar</code> 時，Controller 會經過下面的流程：</p>
+
+<ol>
+<li><strong>Method-based action</strong> ： 尋找 Controller 中是否有名為 <code>actionBar</code> 的 method，如果有，便執行它。</li>
+<li><strong>Class-based action</strong>：如果沒有 Method-based action ，便搜尋 <strong>action class map</strong> ，（ class map 定義在 Controller 中的 <code>actions()</code> 方法 ) 如果 class map 中有定義名為 Bar 的 <code>CAction</code> 類別，便新增一個 Bar 的實體，並執行 <code>Foo -&gt; run()</code> 方法。</li>
+<li><strong>Call missingAction()</strong>：如果都找不到，將會執行 <code>missingAction()</code> 方法，你可以複寫這個方法，預設是拋出 <code>404 HttpException</code>。</li>
+</ol>
+
+
+<blockquote class="note">
+<p>
+如果使用者並沒有要求任何 Action ， Controller 將回傳 <code>defaultAction</code>，預設是 actionIndex，當然，你也可以指定其他的 action 作為 defaultAction。
+</p>
+</blockquote>
+
+
+<p>除了在 Controller 中定義 action 方法之外，我們也可以採用所謂的 <strong>Class-based action</strong> 的方式來定義 action，往後的篇章再做說明。</p>
+
+<h2>View</h2>
+
+<p>Yii 中的 View Render，我們可以透過 <code>CController::render</code> 來呼叫 View 檔案，預設的 view 檔案會放在 `protected/views/ControllerID/ 這個資料夾下，因此我們在 action 方法中可以呼叫 render() 來呼叫 View ：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">FooController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'> <span class="k">public</span> <span class="nx">actionBar</span><span class="p">()</span>
+</span><span class='line'> <span class="p">{</span>
+</span><span class='line'>  <span class="nv">$this</span> <span class="o">-&gt;</span> <span class="na">render</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">);</span>
+</span><span class='line'> <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>當使用者呼叫 <code>actionBar()</code> 時，Controller 會找到在 <code>protected/views/foo/</code> 資料夾中的 <code>bar.php</code> 並顯示在使用者的畫面上，完成這次的 Request。 在 view script 檔案中，我們可以透過 <code>$this</code> 來存取 render view 的 controller 實體，Yii 稱這種方式為 <code>pull</code>，我們也可以透過所謂 <code>push</code> 的方式，直接在 render 的時候將資料送進 view 檔案中：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="k">public</span> <span class="nx">actionBar</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nv">$this</span> <span class="o">-&gt;</span> <span class="na">render</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+</span><span class='line'>      <span class="s1">&#39;var&#39;</span><span class="o">=&gt;</span><span class="nv">$value</span>
+</span><span class='line'>  <span class="p">));</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>以上面的範例來說，我們可以直接在 view 之中使用名稱為 <code>$var</code> 的變數：</p>
+
+<figure class='code'><figcaption><span>protected/views/foo/bar.php</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'>  <span class="c1">//用 pull 的方式 存取 FooController 的 layout 屬性</span>
+</span><span class='line'>  <span class="k">echo</span> <span class="nv">$this</span> <span class="o">-&gt;</span> <span class="na">layout</span><span class="p">;</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="c1">//存取 controller push 過來的 var 變數</span>
+</span><span class='line'>  <span class="k">echo</span> <span class="nv">$var</span><span class="p">;</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yii 也支援使用者使用自定義的 template syntax，可以透過繼承 <code>CViewRenderer</code> 定義自己設計的特殊 syntax。設計好了 View Renderer 只需要在 <code>config/main.php</code> 中設定：</p>
+
+<figure class='code'><figcaption><span>protected/config/main.php</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'>  <span class="s1">&#39;components&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+</span><span class='line'>      <span class="o">...</span>
+</span><span class='line'>      <span class="s1">&#39;viewRenderer&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+</span><span class='line'>          <span class="s1">&#39;class&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;path/to/your/ViewRender&#39;</span><span class="p">,</span>
+</span><span class='line'>      <span class="p">),</span>
+</span><span class='line'>  <span class="p">),</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<blockquote class="note">
+<p>
+Yii 本身內建了 PradoViewRenderer，只要在設定檔將 viewRenderer class 設定為 <code>CProdoViewRenderer</code> 就可以使用 <a href="http://www.pradosoft.com/demos/quickstart/?page=Configurations.Templates1">Prado</a> 的 template 語法。
+</p>
+</blockquote>
+
+
+<h2>再複習一次</h2>
+
+<p>使用者的一個 Request 進入Yii 從 <code>index.php</code> 開始，然後開啟了一個 <code>CWebApplication</code> 透過 url router 導入到正確的 Controller，Controller 管理並選擇使用者呼叫的 <strong>Action</strong>，Action 中，可能開啟調用資料庫的 ActiveRecord 取得資料庫資料，最後將畫面 Render 出來，完成一次 Request。</p>
+
+<p>整個 Yii 對 MVC 的實作概念解說大概到這邊，下次將從 EntryScript 開始深入探究 YiiFramework :)。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[在 Redmine 中加入 Git Repository]]></title>
