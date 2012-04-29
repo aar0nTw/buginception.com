@@ -4,7 +4,7 @@
   <title><![CDATA[Category: yii | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/yii/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-04-29T15:08:48+08:00</updated>
+  <updated>2012-04-29T18:49:39+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[[Yii]Ch.1-1 MVC 架構]]></title>
-    <link href="http://blog.buginception.com/blog/2012/04/25/yii-mvc-structure/"/>
-    <updated>2012-04-25T01:32:00+08:00</updated>
-    <id>http://blog.buginception.com/blog/2012/04/25/yii-mvc-structure</id>
+    <link href="http://blog.buginception.com/blog/2012/04/29/yii-mvc-structure/"/>
+    <updated>2012-04-29T01:32:00+08:00</updated>
+    <id>http://blog.buginception.com/blog/2012/04/29/yii-mvc-structure</id>
     <content type="html"><![CDATA[<p>MVC 模式，這個模式的概述，應該是已經講到爛掉的 topic 了，所以這篇我主要想從 Yii 對於 Model-View-Controller 的相關實作方式來切入。</p>
 
 <blockquote class="note">

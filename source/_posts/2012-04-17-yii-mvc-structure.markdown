@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Yii]Ch.1-1 MVC 架構"
-date: 2012-04-25 01:32
+date: 2012-04-29 01:32
 comments: true
 categories: [yii,php,tutorial]
 ---
