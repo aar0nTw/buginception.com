@@ -4,7 +4,7 @@
   <title><![CDATA[Category: osx | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/osx/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-04-29T15:05:33+08:00</updated>
+  <updated>2012-04-29T15:08:48+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -54,26 +54,7 @@
 
 <p>附上我的:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (com.yahoo.KeyKey.OneKey.plist)</span> <a href='/downloads/code/com.yahoo.KeyKey.OneKey.plist'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-</span><span class='line'><span class="cp">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span>
-</span><span class='line'><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;dict&gt;</span>
-</span><span class='line'>	<span class="nt">&lt;key&gt;</span>ShortcutKey<span class="nt">&lt;/key&gt;</span>
-</span><span class='line'>	<span class="nt">&lt;string&gt;</span>
-</span><span class='line'><span class="nt">&lt;/string&gt;</span>
-</span><span class='line'><span class="nt">&lt;/dict&gt;</span>
-</span><span class='line'><span class="nt">&lt;/plist&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% include_code com.yahoo.KeyKey.OneKey.plist lang:xml %}</p>
 
 <p>因為我也沒去試別的改法XDrz</p>
 ]]></content>

@@ -84,7 +84,7 @@ Controller
 Yii app 的 Controller 如下所示：
 ```php
 <?php
-class FooController extend Controller
+class FooController extends Controller
 {
 // some code...
 }
