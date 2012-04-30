@@ -251,4 +251,9 @@ kbd{
 
   a, a:visited{
     color:#1863A1;
+    text-decoration:none;
+  }
+  a:hover{
+    color:#0181eb;
+    text-decoration:underline;
   }
