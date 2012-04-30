@@ -9,8 +9,17 @@
   <meta name="author" content="Aaron Huang">
 
   
-  <meta name="description" content="由於Tumblr 最近實在有點不穩，於是從Tumblr 轉到 Octopress 至於Octopress有什麼好處跟特點，很多前輩高人都闡述過了，我就不多囉嗦了 如果還是想知道的請見 Why Octopress? via xDite
-">
+  <meta name="description" content="通常情況下，我們習慣這樣來給予Model值 FooController1
+2
+3
+4
+5
+6
+7
+&lt;?php
+//....上略
+$model = new Foo();
+if(isset($_POST[&#39;Foo&#39;])){ $model-&gt;attributes = $ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -156,6 +165,68 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/01/11/yii-assign-attributes/">[Yii]Assign Attribute&#8217;s Issue</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-11T15:28:00+08:00" pubdate data-updated="true">Jan 11<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/01/11/yii-assign-attributes/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>通常情況下，我們習慣這樣來給予Model值</p>
+
+<figure class='code'><figcaption><span>FooController</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="c1">//....上略</span>
+</span><span class='line'><span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;Foo&#39;</span><span class="p">])){</span>
+</span><span class='line'>  <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">attributes</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;Foo&#39;</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>這叫做 <strong>massively assigned</strong></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/01/11/yii-assign-attributes/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/01/05/switching-from-tumblr-to-octopress/">轉換至Octopress.</a></h1>
     
     
@@ -208,6 +279,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/04/30/macosx-ipv6-ascc-tunnel-broker/">Mac OSX 下使用中研院的 tunnel broker</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/04/29/yii-mvc-structure/">[Yii]Ch.1-1 MVC 架構</a>
       </li>
     
@@ -223,15 +298,11 @@
         <a href="/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/">[OSX]關閉Yahoo!輸入法的一點通服務</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2012/02/22/use-git-on-dropbox/">用Dropbox來當做Git remote</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/blog' style='font-size: 108.57142857142857%'>Blog(1)</a> <a href='/blog/categories/dropbox' style='font-size: 108.57142857142857%'>Dropbox(1)</a> <a href='/blog/categories/git' style='font-size: 117.14285714285714%'>Git(2)</a> <a href='/blog/categories/gitolite' style='font-size: 108.57142857142857%'>Gitolite(1)</a> <a href='/blog/categories/mac' style='font-size: 108.57142857142857%'>Mac(1)</a> <a href='/blog/categories/octopress' style='font-size: 108.57142857142857%'>Octopress(1)</a> <a href='/blog/categories/osx' style='font-size: 108.57142857142857%'>Osx(1)</a> <a href='/blog/categories/php' style='font-size: 142.85714285714286%'>Php(5)</a> <a href='/blog/categories/redmine' style='font-size: 108.57142857142857%'>Redmine(1)</a> <a href='/blog/categories/tumblr' style='font-size: 108.57142857142857%'>Tumblr(1)</a> <a href='/blog/categories/tutorial' style='font-size: 151.42857142857144%'>Tutorial(6)</a> <a href='/blog/categories/yahoo-keykey' style='font-size: 108.57142857142857%'>Yahoo!keykey(1)</a> <a href='/blog/categories/yii' style='font-size: 160.0%'>Yii(7)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/ascc' style='font-size: 108.57142857142857%'>Ascc(1)</a> <a href='/blog/categories/blog' style='font-size: 108.57142857142857%'>Blog(1)</a> <a href='/blog/categories/dropbox' style='font-size: 108.57142857142857%'>Dropbox(1)</a> <a href='/blog/categories/git' style='font-size: 117.14285714285714%'>Git(2)</a> <a href='/blog/categories/gitolite' style='font-size: 108.57142857142857%'>Gitolite(1)</a> <a href='/blog/categories/gw6c' style='font-size: 108.57142857142857%'>Gw6c(1)</a> <a href='/blog/categories/ipv6' style='font-size: 108.57142857142857%'>Ipv6(1)</a> <a href='/blog/categories/mac' style='font-size: 108.57142857142857%'>Mac(1)</a> <a href='/blog/categories/octopress' style='font-size: 108.57142857142857%'>Octopress(1)</a> <a href='/blog/categories/osx' style='font-size: 108.57142857142857%'>Osx(1)</a> <a href='/blog/categories/php' style='font-size: 142.85714285714286%'>Php(5)</a> <a href='/blog/categories/redmine' style='font-size: 108.57142857142857%'>Redmine(1)</a> <a href='/blog/categories/tumblr' style='font-size: 108.57142857142857%'>Tumblr(1)</a> <a href='/blog/categories/tunnel-broker' style='font-size: 108.57142857142857%'>Tunnel broker(1)</a> <a href='/blog/categories/tutorial' style='font-size: 151.42857142857144%'>Tutorial(6)</a> <a href='/blog/categories/yahoo-keykey' style='font-size: 108.57142857142857%'>Yahoo!keykey(1)</a> <a href='/blog/categories/yii' style='font-size: 160.0%'>Yii(7)</a> </span>
 </section>
 <section>
 <h1>License</h1>
