@@ -20,7 +20,7 @@ categories: [php,yii,tutorial]
 	* [環境建置](/blog/2012/02/09/yii-environment/)
 	* [使用yiic建立第一個webapp](/blog/2012/03/23/yii-say-hello-for-world/)
 2. Ch.1 從基礎開始:
-	* MVC架構
+	* [MVC架構](/blog/2012/04/29/yii-mvc-structure/)
 	* 引導頁面(bootstrap)
 	* Yii應用設定
 	* Controller
