@@ -4,7 +4,7 @@
   <title><![CDATA[Category: php | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-05-01T03:09:32+08:00</updated>
+  <updated>2012-08-18T00:57:39+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -417,7 +417,7 @@ CAssetManager.basePath "/var/www/html/yii/demos/blog/assets" is invalid. Please 
 <li>Ch.1 從基礎開始:
 
 <ul>
-<li>MVC架構</li>
+<li><a href="/blog/2012/04/29/yii-mvc-structure/">MVC架構</a></li>
 <li>引導頁面(bootstrap)</li>
 <li>Yii應用設定</li>
 <li>Controller</li>
