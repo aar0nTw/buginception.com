@@ -4,7 +4,7 @@
   <title><![CDATA[[bug:inception]]]></title>
   <link href="http://blog.buginception.com/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2012-08-18T00:57:39+08:00</updated>
+  <updated>2012-08-28T03:13:02+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[待業中 :-)]]></title>
+    <link href="http://blog.buginception.com/blog/2012/08/27/new-job/"/>
+    <updated>2012-08-27T23:10:00+08:00</updated>
+    <id>http://blog.buginception.com/blog/2012/08/27/new-job</id>
+    <content type="html"><![CDATA[<p><img src="http://blog.buginception.com/images/901911238520281.jpg" alt="image" /></p>
+
+<p>(image via <a href="http://www.behance.net/gallery/The-Big-Deal/204395">Anca Sandu</a>)</p>
+
+<blockquote><p><del>在文章前面放張圖片這麼給掰的一件事，我早就想幹一次試試看了</del>，當我打開 octopress 的 source 資料夾，才意識到自己已經整整四個月沒動過文章了 Orz，About Me 這頁看來好像也該改改了。<strong>待業中聽起來好像很糟啊</strong>，不過其實應該是 <strong>等待就業中</strong>，下週一開始面對的，將是截然不同的新工作。</p></blockquote>
+
+<p>特地選擇在上週離職，並且把特休休完，這樣我還有整整十天的時間可以調整步調跟好好休息，不用太匆促的做轉換。</p>
+
+<p>沒寫文章四個月，四個月前，正好是我開始認真考慮去留的時間點，花了很長的時間思考，畢竟這是出社會後的第一份工作，也待了將近兩年的時光，說沒有情感在裡頭，是騙人的。</p>
+
+<p>來說說關於去留這件事，每個人考慮一間公司或一個團隊適不適合自己，大部分跟幾種原因脫不了關係，尤其是團隊有大型決策時，人們嘴上不說，心中總是自己默默的在考量整個團隊走向，別忘了，在小型團隊裡，那種上對下的關係其實是沒有那麼明顯的，公司、團隊會篩選成員，考核成員；但成員也同樣在打量整個團隊、領導人。</p>
+
+<!-- more -->
+
+
+<p>那麼，哪些原因會是成員們考量的點？簡單來說就是：<strong>成就感、人際關係、跟錢</strong>。</p>
+
+<p>這三種裡面，要是缺了其中一種，其實就有了一個理由。</p>
+
+<p>但是，要三種都有，那是上輩子有燒香。要三種都沒有，那也不太可能，因為苗頭不對，早就閃人了。</p>
+
+<p>不過以上三個點，是大部分人考慮的，但都不是最重要的！其實很多事情最重要的，是兩個字：<strong>說服</strong>。</p>
+
+<p>一個團隊有沒有辦法拿出條件，說服你願意奉獻自身所學，那才是最重要的。如果客觀條件看來團隊並沒有說服你，那你就必須自己說服自己。</p>
+
+<p>一個團隊，一群人，每個人都有不同的背景，但是卻聚集在同一個地方，這樣的一件事，光用想的就會覺得很棒，尤其是如果每個人都願意為了相同的目標往前，那會是更棒的一件事。</p>
+
+<p>如果工作上沒有一個理由，將這群偶然聚首的人連結起來，那也不過就是個普通的工作罷了。</p>
+
+<p>偏偏很多人，是誤打誤撞的開始了當下的工作，找一份工作，開始上班、賺錢；當然很多人就是希望當個普通的上班族就好了，不過我相信那不是這些人最原始的希望，只不過是這些人還沒開始做一個屬於自己的夢而已。</p>
+
+<p>可惜，我知道我不是這樣子的，那不是我的初衷。不知道有幾個人說過，我很幸運，從小就知道自己要做什麼，長大後，出社會了也是做自己有興趣的工作。不，不對，我仍然在朝著我的目標前進、努力，我小時候的確是以成為程式設計師為目標努力著，但是過了不久，我還是中學生，但我知道我以後一定會吃這行飯，所以我在目標前面加了三個字，我想成為偉大的程式設計師，後來再長大了一點，發現要達成偉大似乎稍嫌遙遠，所以我再修正我的目標，我希望有一天能成為一個<strong>受人尊敬的開發者</strong>。</p>
+
+<p>目標總會修正，但是初衷卻不會改變。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mac OSX 下使用中研院的 tunnel broker]]></title>
