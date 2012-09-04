@@ -11,11 +11,11 @@ footer: true
 
 ![](http://gravatar.com/avatar/f085e1553be82bc8425469b5b235d664)
 
-在台灣這個小小島上的一位小小碼農
-
+碼農一枚，慢慢耕田中。
 
 ###經歷
 
+* [Waveface](http://waveface.com) ( 2012/09 ~ )
 * [Nexdoor.inc 宇宣數位媒體有限公司](http://www.nexdoor.cc) , Web Developer ( 2010/10 ~ 2012/08 )
 * [國立高雄第一科技大學 資訊管理系](http://mis.nkfust.edu.tw) , 學士 ( 2005/09 ~ 2009/06 )
 
