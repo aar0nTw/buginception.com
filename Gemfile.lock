@@ -64,5 +64,6 @@ DEPENDENCIES
   rb-fsevent
   rdiscount
   rubypants
+  sass (= 3.1.5)
   sinatra (= 1.2.6)
   stringex

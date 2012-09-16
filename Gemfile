@@ -17,3 +17,4 @@ end
 
 gem 'sinatra', '1.2.6'
 gem 'rack-rewrite', '~> 1.2.1'
+gem 'sass', '3.1.5'
