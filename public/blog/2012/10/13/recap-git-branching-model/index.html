@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>[Yii]Ch.0-3 Yii環境建置 - [bug:inception]</title>
+  <title>成功的 Git 分支模式 - [bug:inception]</title>
   <meta name="author" content="Aaron Huang">
 
   
-  <meta name="description" content="這一篇可能是一個比較短的篇幅，來講環境建置的部份，上一篇已經有稍微的講到了環境需求，那我也不在重複一次，接著請下載最新的YiiFramework Yii 官方網站下載 或者是github上熱心人士非官方的source，目前更新到1.1.9 1
-$ git clone https://github. &hellip;">
+  <meta name="description" content="(image via Bartek Elsner) 這週四，有幸參與了 CocoaHeads Taipei 十月份的聚會，並且跟與會的朋友們分享了公司內部管理 Git 分支的模式，其實這個模式其實非常流行了，最早是由 Vincent Driessen 先生於他的 Blog 分享的， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ $ git clone https://github. &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.buginception.com/blog/2012/02/09/yii-environment">
+  <link rel="canonical" href="http://blog.buginception.com/blog/2012/10/13/recap-git-branching-model">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -153,7 +152,7 @@ $ git clone https://github. &hellip;">
   
   <header>
     
-      <h1 class="entry-title">[Yii]Ch.0-3 Yii環境建置</h1>
+      <h1 class="entry-title">成功的 Git 分支模式</h1>
     
     
       <p class="meta">
@@ -169,7 +168,7 @@ $ git clone https://github. &hellip;">
   
 
 
-<time datetime="2012-02-09T16:52:00+08:00" pubdate data-updated="true">Feb 9<span>th</span>, 2012</time>
+<time datetime="2012-10-13T00:27:00+08:00" pubdate data-updated="true">Oct 13<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -178,79 +177,118 @@ $ git clone https://github. &hellip;">
   </header>
 
 
-<div class="entry-content"><p>這一篇可能是一個比較短的篇幅，來講環境建置的部份，上一篇已經有稍微的講到了環境需求，那我也不在重複一次，接著請下載最新的YiiFramework</p>
+<div class="entry-content"><p><img src="/images/137c1365ae01d749bcfbf502f51c9f0d.jpeg" alt="image" /></p>
 
-<blockquote><p><a href="http://www.yiiframework.com/download/">Yii 官方網站下載</a></p></blockquote>
+<p>(image via <a href="http://www.behance.net/gallery/The-Branch/3680339">Bartek Elsner</a>)</p>
 
-<p>或者是github上熱心人士非官方的source，目前更新到1.1.9</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone https://github.com/dmtrs/unofficial-yii-framework-mirror.git
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>解壓縮到網站根目錄下，取個簡單的名字，例如：yii</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>tar -xzf yii-1.1.9.r3527.tar.gz
-</span><span class='line'><span class="nv">$ </span>mv ./yii-1.1.9.r3527 yii
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>接下來我們打開Yii requirement頁面來看一下yii系統需求檢查：</p>
+<blockquote><p>這週四，有幸參與了 CocoaHeads Taipei 十月份的聚會，並且跟與會的朋友們分享了公司內部管理 Git 分支的模式，其實這個模式其實非常流行了，最早是由 <a href="http://nvie.com/posts/a-successful-git-branching-model/">Vincent Driessen</a> 先生於他的 Blog 分享的，並且有許多團隊都是採用這麼一套 flow，這篇文章主要是整理 CocoaHeads 當天我所分享的內容，並且做更詳細的補充。</p></blockquote>
 
 <!-- more -->
 
 
+<h1>Why Git ?</h1>
 
+<p>先談談為什麼要用 Git，其實現在用 Git 是普世價值(?)，好像不用 Git 就弱掉了，當然不是，之所以用 Git 絕對有它的理由，可以以極低成本的開啟一個 Branch，絕對是 Git 吸引人的最大理由之一。</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>http://localhost/yii/requirements/
-</span></code></pre></td></tr></table></div></figure>
+<p>這邊讓我們先來談談 VCS（版本控制系統）的進化之路，看看從古至今，我們運用 VCS 的工作流程發生了什麼樣的改變：</p>
 
+<h2>Lock</h2>
 
-<p>可以看到類似下面的畫面：</p>
+<p>早期的一些 VCS，在多人開發模式的處理上，運用了一種極為簡陋與現今難以想像的方式，我們稱之為 <strong>Lock</strong>，每當其中一個開發者開始編修一個檔案的時候，便將該檔案鎖住，使其他的開發者無法同時編輯該檔案，也就是說當你有一個問題要解決，這個問題牽扯到其他檔案，如果其他檔案有人正在修改，那你可以說是寸步難行，這是一種過時而且非常差的處理方式。（就像我們難以想像現今仍然有公司不使用 VCS，只運用 email 與檔案壓縮工具互相交換 source code 一樣，那是一種口頭上的 Lock）</p>
 
-<p><img src="/images/article/ch0_3_01.PNG" alt="Yii系統需求檢查" /></p>
+<h2>Merge</h2>
 
-<p>如果你是一個新建立的網站環境，可能會有大部分的php extension是未通過的狀況，
-上圖中，由於我這邊沒有memcache server所以除了memcache extension之外其餘都是通過的狀態，這邊建議是使用者是YiiFramework的extension是必備的，其餘元件看個人需求安裝。</p>
+<p>後來，有些東西改變了，較為進步的版本控制系統，開始提供一個稱之為 <strong>Merge</strong> 的功能，開發者們開始可以同時對一個檔案進行更動，並且提交他的更改（<strong>Commit</strong>），如果發現有衝突（<strong>Conflct</strong>），開發者們可以互相的去修復衝突，藉此達到共同開發的效果。</p>
+
+<h2>Pull</h2>
+
+<p>但是這樣其實是不夠的，僅僅只是 <strong>Merge</strong> 的功能，我們無法確保團隊之中所有人的修改都不會對自身的程式造成影響。那麼在現今更為先進的版本控制系統，例如 Git 之類的 DVCS（分散式版本控制系統）我們獲得一種新的模式稱之為：<strong>Pull</strong>，如果說 <strong>Merge</strong> 是人類發現了火，那 <strong>Pull</strong> 可以說是協同開發的工業革命，在分散式版本控管系統的特性下，一個團隊的 Leader，或說是一個 Project 的擁有者、主要維護者，可以接受由別人所發送的 <strong>Pull Request</strong>，將其他開發者所修改、新增的項目 <strong>Pull</strong> 下來，並且作 review，沒有問題才將之 <strong>Merge</strong> 到主要的 Repo，當然，這樣的方式，有很大負擔會落在主要的維護者身上，整體效率取決於 Project Owner 的效率，如果是一個龐大的商業專案，我們需要更有效率的方式。</p>
+
+<h2>Review &amp; Accept</h2>
+
+<p>那麼如果我們可以做到系統自動化測試、CI，然後每一次的 Pull Request，通過測試之後，整體團隊的任何人都可以來 Review、討論、最後接受這一次的修改，Project Owner 的效率問題所帶來的瓶頸，將不再是問題，對於整體 Project 的程式碼品質，以及團隊成員對每一部分的熟悉度，以及持續改善程式碼品質方面，都可以帶來莫大的幫助，我們無形中達成了許多團隊抽不出時間做到的，我們也許就不再需要花額外的時間來實行 Code Review。現今，Google Android Project 所使用的 <a href="http://code.google.com/p/gerrit/">Gerrit</a> 系統，便是為了達成此種目的所開發的系統，而 GitHub 的 Pull Request 功能，同樣也可以達到相同的效果。</p>
+
+<h1>Git Flow</h1>
+
+<p>當我們進入到了 Review &amp; Accept 的階段後，我們更需要一個結構完整、清楚並且高效率的分支控管模式，這就是今天最重要的主題了。我將會一一介紹在這個模式中會出現的五個 Branch，下面我將從最重要的 Branch 開始。</p>
+
+<h2>The Main Branches</h2>
 
 <ul>
-<li><a href="http://pecl.php.net/package/APC">APC</a></li>
-<li><a href="http://www.php.net/manual/en/mcrypt.installation.php">mcrypt</a></li>
-<li><a href="http://www.php.net/manual/en/memcache.installation.php">Memcache</a></li>
-<li><a href="http://www.php.net/manual/en/image.installation.php">GD</a></li>
+<li>Master Branch</li>
+<li>Develop Branch</li>
 </ul>
 
 
-<p>當我們測試完Yii Requirements，可以打開yii demo頁來看看：</p>
+<h3>Master Branch</h3>
+
+<p>第一個是 Git 使用者相當熟悉的 <code>master</code>，作為主要的分支，在這樣的模式之下，<code>master</code> 並不會是最新的開發內容，但 <code>master</code> 會完全的與正式版的內容相同，<code>master</code> 的內容就會是 Production 的內容。</p>
+
+<h3>Develop Branch</h3>
+
+<p>而 <code>develop</code> 則會是最重要的分支，它會是所有開發里程碑的紀錄，而 Project 管理者在決定下一個正式版發布內容時也將完全運用 <code>develop</code> 來評估團隊下一個版本將 release 的內容。</p>
+
+<p>而這兩個主要 Branch 將會是 Project 的骨幹，在 Project 的生命軌跡之中，只有這兩個 Branch，是永遠存在的。</p>
+
+<h2>Support Branches</h2>
+
+<ul>
+<li>Feature Branch</li>
+<li>Release Branch</li>
+<li>Hotfix Branch</li>
+</ul>
+
+
+<p>這三類分支是我們口中的輔助，輔助 Branch 會在達成他的任務後便關閉，並 <strong>merge</strong> 回 main branch 之中。</p>
+
+<h3>Feature Branch</h3>
+
+<p>當一個開發者準備開始在一個 Project 之中展開一個新功能的開發，開發者將會從 <code>develop</code> 轉移到所謂的 <code>feature</code> 之中，在這邊，我們團隊的慣例是以 <code>aaron-feature/</code> 這樣的 Prefix 命名慣例來開展一個新的 feature branch，例如：<code>aaron-feature/new-function</code> 類似這樣的 feature branch 命名方式。</p>
+
+<p>而當我們完成一個 feature 的開發，我們將會把 <code>aaron-feature/new-function</code> <strong>push</strong> 到 GitHub  上，並且發送一個 <strong>Pull Request</strong>，進入 <strong>Review</strong> 的階段，團隊中的成員將會就這些功能與原始碼，展開討論與 Code Review 並給予建議與改善，最後認可，由團隊的其他成員將 feature branch <strong>merge</strong> 回 <code>develop</code> 並結束這一個 feature 的流程。</p>
+
+<h3>Release Branch</h3>
+
+<p><code>develop</code> 上完成的新 feature 越來越多，Project Owner 決定 Release 一個新的版本，此時我們將會展開一個新的 Release Branch 如 <code>release-v2.0.0</code>，開始進入 <strong>Regression test</strong> 的階段，此時最重要的原則便是，進入 <code>release</code> 分支之後，只有在 <code>release</code> 修正問題後所產生的 commit 可以合併回 <code>develop</code>，而 <code>develop</code> 中任何的新改變，都不可 <strong>merge</strong> 回 <code>release</code> 否則變失去了做 Release Branch 的意義。</p>
+
+<p>在完成了 Regression test 之後，我們便可以發佈一個新的正式版了，這時候我們將會把 <code>release</code> 分支中所作的改動合併回 <code>master</code> 與 <code>develop</code> 並關閉這一個 release branch，並且在 <code>master</code> 之中加上新的 Tag <code>v2.0.0</code> 完成這一次新版本的 Release。</p>
+
+<h3>Hotfix Branch</h3>
+
+<p>百密一疏，當我們發現在 Production 的環境之中，有在 Release 階段未能發現的嚴重 Bug 需要即時的做修復，我們便會進入到所謂 <strong>Hotfix</strong> 的階段。其實某種程度上來說，<code>hotfix</code> 與 <code>release</code> 是非常相似的，它們最終的目的都是在 <code>master</code> 上發佈一個新版本，只是緣由不同而已。</p>
+
+<p>例如我們某天在正式版上發現了一個嚴重的 Bug 已經影響整個程式的運行，我們將會從 <code>master</code> 展開一個名為 <code>hotfix-v2.0.1</code> 的 branch，當我們完成 bug 的修復，同時將 <code>hotfix</code> 的內容 <strong>merge</strong> 回 <code>develop</code> 與 <code>master</code> 並發布一個新版本 <code>v2.0.1</code></p>
+
+<h1>No Fast Foward</h1>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>http://localhost/yii/demos/blog
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git merge --no-ff
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>可以看到一個採用YiiFramework的Blog：</p>
+<p>也許有些人喜歡使用 Fast Foward 來讓 Git 的線圖保持乾淨，但其實使用 Fast-Foward 並沒有帶來任何好處，不使用 fast-foward 是很重要的，也許使用 <code>no-ff</code> 會使 log 上多出一個 commit，但它將使團隊的開發過程有詳細的脈絡可循，所帶來的好處遠比少一個 commit 來的重要與龐大。</p>
 
-<p><img src="/images/article/ch0_3_02.PNG" alt="Yii Blog Demo" /></p>
+<h1>Tools</h1>
 
-<p>到這邊為止，可能會遇到Demo頁面遇到以下狀況：</p>
+<p>如果想要快速的開始運用這樣的模式與流程，Vincent Driessen 也開發了一個 git plugin：<a href="https://github.com/nvie/gitflow">git-flow</a>，讓開發者可以很輕易的使用這樣的分支模式。</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>Application runtime path <span class="s2">&quot;/var/www/html/yii/demos/blog/protected/runtime&quot;</span> is not valid. Please make sure it is a directory writable by the Web server process.
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>brew install git-flow
+</span><span class='line'><span class="nv">$ </span>mkdir your-project
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>your-project
+</span><span class='line'><span class="nv">$ </span>git flow init
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>或者是</p>
+<h1>Slide</h1>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>CAssetManager.basePath <span class="s2">&quot;/var/www/html/yii/demos/blog/assets&quot;</span> is invalid. Please make sure the directory exists and is writable by the Web server process.
-</span></code></pre></td></tr></table></div></figure>
+<p>
+<center><iframe src="http://www.slideshare.net/slideshow/embed_code/14685015" width="597" height="486" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe></center>
+</p>
 
-
-<p>這時只要修改一下<strong>assets</strong>跟<strong>protected/runtime</strong>的資料夾權限讓php可以存取，就沒有問題了:)</p>
 </div>
 
 
@@ -273,12 +311,12 @@ $ git clone https://github. &hellip;">
   
 
 
-<time datetime="2012-02-09T16:52:00+08:00" pubdate data-updated="true">Feb 9<span>th</span>, 2012</time>
+<time datetime="2012-10-13T00:27:00+08:00" pubdate data-updated="true">Oct 13<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a>
+    <a class='category' href='/blog/categories/cocoaheads/'>cocoaheads</a>, <a class='category' href='/blog/categories/git/'>git</a>
   
 </span>
 
@@ -287,7 +325,7 @@ $ git clone https://github. &hellip;">
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.buginception.com/blog/2012/02/09/yii-environment/" data-via="aar0ntw" data-counturl="http://blog.buginception.com/blog/2012/02/09/yii-environment/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.buginception.com/blog/2012/10/13/recap-git-branching-model/" data-via="aar0ntw" data-counturl="http://blog.buginception.com/blog/2012/10/13/recap-git-branching-model/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -300,10 +338,8 @@ $ git clone https://github. &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/01/28/preparation/" title="Previous Post: [Yii]Ch.0-2 事前準備">&laquo; [Yii]Ch.0-2 事前準備</a>
+        <a class="basic-alignment left" href="/blog/2012/09/16/something-about-pomodoro/" title="Previous Post: 蕃茄工作法的二三事">&laquo; 蕃茄工作法的二三事</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/02/22/use-git-on-dropbox/" title="next Post: 用Dropbox來當做Git remote">用Dropbox來當做Git remote &raquo;</a>
       
     </p>
   </footer>
@@ -396,8 +432,8 @@ $ git clone https://github. &hellip;">
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.buginception.com/blog/2012/02/09/yii-environment/';
-        var disqus_url = 'http://blog.buginception.com/blog/2012/02/09/yii-environment/';
+        var disqus_identifier = 'http://blog.buginception.com/blog/2012/10/13/recap-git-branching-model/';
+        var disqus_url = 'http://blog.buginception.com/blog/2012/10/13/recap-git-branching-model/';
         var disqus_script = 'embed.js';
       
     (function () {

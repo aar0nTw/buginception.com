@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: git | [bug:inception]]]></title>
-  <link href="http://blog.buginception.com/blog/categories/git/atom.xml" rel="self"/>
+  <title><![CDATA[Category: cocoaheads | [bug:inception]]]></title>
+  <link href="http://blog.buginception.com/blog/categories/cocoaheads/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
   <updated>2012-10-13T02:45:53+08:00</updated>
   <id>http://blog.buginception.com/</id>
@@ -125,129 +125,6 @@ $ git flow init
 <center><iframe src="http://www.slideshare.net/slideshow/embed_code/14685015" width="597" height="486" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe></center>
 </p>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[在 Redmine 中加入 Git Repository]]></title>
-    <link href="http://blog.buginception.com/blog/2012/04/02/redmine-use-git-code-review/"/>
-    <updated>2012-04-02T12:36:00+08:00</updated>
-    <id>http://blog.buginception.com/blog/2012/04/02/redmine-use-git-code-review</id>
-    <content type="html"><![CDATA[<p>相信 <a href="http://www.redmine.org/">Redmine</a> 是很多人在使用的專案管理系統，而 <a href="http://git-scm.com/">Git</a>，相信也是各種 SCM 裡的大宗，而應該滿多人使用 <a href="https://github.com/sitaramc/gitolite">gitolite</a> 來控管自己的 git remote server 的。</p>
-
-<p>之所以寫這篇，是因為小弟公司在整合兩者的時候，撞到了 gitolite 的 repo 權限問題。</p>
-
-<p>所以這篇就來簡單的講解一下如何在 Redmine 裡面加入使用 gitolite 管理的 Repository ， 可在 Redmine 直接觀看 Source Repo，以及作為 Code Review 之用。</p>
-
-<!-- more -->
-
-
-<p>首先我們要了解的是，<strong>Redmine 僅能透過檔案系統來存取本地端的 Git Repo</strong>，它並沒有辦法透過 Git protocol 來存取遠端的 Repository。 但是就算是 Local 端的 Repo ， 在 gitolite 的管理之下，Redmine 還是沒有權限去存取 gitolite 控制的 Repository。</p>
-
-<p>因此首先我們要製作一個 Redmine 可以存取的鏡像 Repo。從 Git 1.6 開始我們可以直接從一個 bare repository clone 產出另一個 bare repository。</p>
-
-<p>首先建立一個資料夾來存放我們待會要 clone 的 repository。</p>
-
-<p>*這邊開始以 <code>/var/git-miroors</code> 資料夾為例子：</p>
-
-<p><code>bash
-$ mkdir /var/git-mirrors
-$ cd /var/git-mirrors/
-</code></p>
-
-<p>再來我們要使用 <code>git clone --mirror</code> 建立一個原始 repo 的鏡像：</p>
-
-<p><code>bash Folder : /var/git-mirrors/
-$ git clone --mirror your/gitolite/path/your-repo.git
-</code></p>
-
-<p>接下來下一步，由於之後 <code>git</code> 使用者會透過 <code>post-receive</code> hook 來同步兩個 repository，我們直接修改這個境像 repository 的 owner / group 為 <code>git</code> 來讓它有讀寫權限。</p>
-
-<p><code>bash Folder : /var/git-mirror
-$ chown -R git:git your-repo.git
-</code></p>
-
-<p>再來我們要設定原本 repo 的 <a href="http://sitaramc.github.com/gitolite/hooks.html">hooks</a> ：</p>
-
-<p><code>bash
-$ cd your/gitolite/path/your-repo.git
-$ vi post-receive
-</code></p>
-
-<p>在 hook <code>post-receive</code> 設定 git push 到鏡像 repo 的動作：</p>
-
-<p>```sh post-receive</p>
-
-<h1>!/bin/sh</h1>
-
-<p>/usr/bin/git push --mirror /var/git-mirrors/your-repo.git
-```</p>
-
-<p>建立完 <code>post-receive</code> 檔案後修改權限：</p>
-
-<p><code>bash
-$ chown git:git post-receive
-$ chmod 700 post-receive
-</code></p>
-
-<p>由於 Git 在做 mirror push 的時候，會保留原始的檔案與資料夾存取權限，在 gitolite 控管下，只有 owner 有讀寫權限，所以一做 mirror push 這個鏡像的 repository 就沒辦法被其他 process 讀取到了，所以我們一開始就要告訴這個 mirror repository 它是被分享的，並且設定它應該要有的存取權限：</p>
-
-<p><code>bash
-$ cd /var/git-mirrors/your-repo.git
-$ chmod a+rX -R ./
-$ git config --add core.sharedRepository 644
-</code></p>
-
-<p>然後在 Redmine 的 Project / Settings / Repository 裡，設定路徑：</p>
-
-<p><img src="http://f.cl.ly/items/0v2V1k0i1y323G2k3S45/Screen%20Shot%202012-04-02%20at%203.03.20%20PM.PNG" alt="" /></p>
-
-<p>點選 Project / Repository 等待一下，讓 Redmine 處理 Repository 的資訊，然後看到 Repo 的資訊：</p>
-
-<p><img src="http://f.cl.ly/items/0P2f0F3K1q402L3Q3a0I/Screen%20Shot%202012-04-02%20at%203.04.53%20PM.PNG" alt="" /></p>
-
-<p>收工 :D</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[用Dropbox來當做Git remote]]></title>
-    <link href="http://blog.buginception.com/blog/2012/02/22/use-git-on-dropbox/"/>
-    <updated>2012-02-22T01:54:00+08:00</updated>
-    <id>http://blog.buginception.com/blog/2012/02/22/use-git-on-dropbox</id>
-    <content type="html"><![CDATA[<p>這篇筆記兼分享一下如何使用<a href="www.dropbox.com">Dropbox</a>簡單建立git remote進行多人協同開發。</p>
-
-<p>當然不是單純的把專案開在Dropbox folder而已，那Source可是會亂掉的:P</p>
-
-<!-- more -->
-
-
-<p>首先我們在Dropbox建立一個資料夾專門放我們的Project</p>
-
-<p><code>bash
-~$ cd Dropbox
-~/Dropbox$ mkdir project
-</code></p>
-
-<p>接著建立一個放置repo的資料夾，並且建立git repo</p>
-
-<p><code>bash
-~/Dropbox$ cd project
-~/Dropbox/project$ mkdir myproj.git
-~/Dropbox/project$ cd myproj.git
-~/Dropbox/project/myproj.git$ git init --bare
-</code>
-這邊用了<code>git init --bare</code>這個指令，它並不會產生<code>.git</code>資料夾，而是會把<code>.git</code>裡面的內容直接產生在目錄下面，並且在往後commit/push到這裡的更動，是不存下source code的，你需要將更動<strong>拉回家</strong>才會有所動作，但是這裡仍然記錄了所有的變動，<code>git init --bare</code>很適合拿來節省空間。</p>
-
-<p>而且使用Dropbox來做remote你也不希望電腦裡有兩份一樣的code在不同的資料夾下吧:)。</p>
-
-<p>接著，我們到本機的repo底下用Dropbox的路徑設定一個新的remote，並且push master branch到<strong>dropbox</strong> remote</p>
-
-<p><code>bash
-~/myproj$ git remote add dropbox ~/Dropbox/project/myproj.git
-~/myproj$ git push dropbox master
-</code>
-接著把Dropbox裡的repo分享給要co-work的人，對方用同樣的方式在設定一次remote，大功告成:)</p>
 ]]></content>
   </entry>
   
