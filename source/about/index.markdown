@@ -15,7 +15,7 @@ footer: true
 
 ###經歷
 
-* [Waveface](http://waveface.com) ( 2012/09 ~ )
+* [Waveface](http://waveface.com) , Cloud Software Developer ( 2012/09 ~ )
 * [Nexdoor.inc 宇宣數位媒體有限公司](http://www.nexdoor.cc) , Web Developer ( 2010/10 ~ 2012/08 )
 * [國立高雄第一科技大學 資訊管理系](http://mis.nkfust.edu.tw) , 學士 ( 2005/09 ~ 2009/06 )
 
