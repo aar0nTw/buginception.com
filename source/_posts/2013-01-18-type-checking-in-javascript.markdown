@@ -22,4 +22,3 @@ typeof (function(){}) // function
 typeof []    // object
 typeof null  // object !!(?)
 ```
-
