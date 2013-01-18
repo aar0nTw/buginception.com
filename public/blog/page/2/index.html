@@ -9,7 +9,7 @@
   <meta name="author" content="Aaron Huang">
 
   
-  <meta name="description" content="相信 Redmine 是很多人在使用的專案管理系統，而 Git，相信也是各種 SCM 裡的大宗，而應該滿多人使用 gitolite 來控管自己的 git remote server 的。 之所以寫這篇，是因為小弟公司在整合兩者的時候，撞到了 gitolite 的 repo 權限問題。 &hellip;">
+  <meta name="description" content="MVC 模式，這個模式的概述，應該是已經講到爛掉的 topic 了，所以這篇我主要想從 Yii 對於 Model-View-Controller 的相關實作方式來切入。 如果真的不了解 MVC 模式，我想從 Wikipedia 開始會是不錯的選擇 XD 除了 MVC 模式之外，Yii 還有一個名為 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -155,6 +155,62 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/04/29/yii-mvc-structure/">[Yii]Ch.1-1 MVC 架構</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-29T01:32:00+08:00" pubdate data-updated="true">Apr 29<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/04/29/yii-mvc-structure/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>MVC 模式，這個模式的概述，應該是已經講到爛掉的 topic 了，所以這篇我主要想從 Yii 對於 Model-View-Controller 的相關實作方式來切入。</p>
+
+<blockquote class="note">
+<p>
+如果真的不了解 MVC 模式，我想從 Wikipedia 開始會是不錯的選擇 XD
+</p>
+</blockquote>
+
+
+<p></p>
+
+<p>除了 MVC 模式之外，Yii 還有一個名為 Application 的 front-controller，Application 可稱為 Yii 的統整中心，負責處理並分配 User 所有的 Request，整個 Yii app 的結構可以看下面這張示意圖:</p>
+
+<p><img src="/images/yii-static-struct.png" alt="" /></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/04/29/yii-mvc-structure/">More &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/04/02/redmine-use-git-code-review/">在 Redmine 中加入 Git Repository</a></h1>
     
     
@@ -202,7 +258,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/03/23/yii-say-hello-for-world/">[Yii]Ch.0-4 建立第一個Web App</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/03/23/yii-say-hello-for-world/">[Yii]Ch.0-4 建立第一個Web app</a></h1>
     
     
       <p class="meta">
@@ -335,7 +391,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/02/22/use-git-on-dropbox/">用Dropbox來當做Git Remote</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/02/22/use-git-on-dropbox/">用Dropbox來當做Git remote</a></h1>
     
     
       <p class="meta">
@@ -375,69 +431,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/02/09/yii-environment/">[Yii]Ch.0-3 Yii環境建置</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-09T16:52:00+08:00" pubdate data-updated="true">Feb 9<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/02/09/yii-environment/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>這一篇可能是一個比較短的篇幅，來講環境建置的部份，上一篇已經有稍微的講到了環境需求，那我也不在重複一次，接著請下載最新的YiiFramework</p>
-
-<blockquote><p><a href="http://www.yiiframework.com/download/">Yii 官方網站下載</a></p></blockquote>
-
-<p>或者是github上熱心人士非官方的source，目前更新到1.1.9</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone https://github.com/dmtrs/unofficial-yii-framework-mirror.git
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>解壓縮到網站根目錄下，取個簡單的名字，例如：yii</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>tar -xzf yii-1.1.9.r3527.tar.gz
-</span><span class='line'><span class="nv">$ </span>mv ./yii-1.1.9.r3527 yii
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>接下來我們打開Yii requirement頁面來看一下yii系統需求檢查：</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/02/09/yii-environment/">More &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -455,6 +448,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/01/12/apple-itunes-app-meta-tag/">iOS6 中的 apple-itunes-app tag</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/10/13/recap-git-branching-model/">成功的 Git 分支模式</a>
       </li>
     
@@ -468,10 +465,6 @@
     
       <li class="post">
         <a href="/blog/2012/04/30/macosx-ipv6-ascc-tunnel-broker/">Mac OSX 下使用中研院的 tunnel broker</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/04/29/yii-mvc-structure/">[Yii]Ch.1-1 MVC 架構</a>
       </li>
     
   </ul>
@@ -491,7 +484,7 @@
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/ascc' style='font-size: 108.57142857142857%'>Ascc(1)</a> <a href='/blog/categories/blog' style='font-size: 108.57142857142857%'>Blog(1)</a> <a href='/blog/categories/career' style='font-size: 108.57142857142857%'>Career(1)</a> <a href='/blog/categories/cocoaheads' style='font-size: 108.57142857142857%'>Cocoaheads(1)</a> <a href='/blog/categories/dropbox' style='font-size: 108.57142857142857%'>Dropbox(1)</a> <a href='/blog/categories/git' style='font-size: 125.71428571428572%'>Git(3)</a> <a href='/blog/categories/gitolite' style='font-size: 108.57142857142857%'>Gitolite(1)</a> <a href='/blog/categories/gw6c' style='font-size: 108.57142857142857%'>Gw6c(1)</a> <a href='/blog/categories/ipv6' style='font-size: 108.57142857142857%'>Ipv6(1)</a> <a href='/blog/categories/job' style='font-size: 108.57142857142857%'>Job(1)</a> <a href='/blog/categories/mac' style='font-size: 108.57142857142857%'>Mac(1)</a> <a href='/blog/categories/octopress' style='font-size: 108.57142857142857%'>Octopress(1)</a> <a href='/blog/categories/osx' style='font-size: 108.57142857142857%'>Osx(1)</a> <a href='/blog/categories/php' style='font-size: 142.85714285714286%'>Php(5)</a> <a href='/blog/categories/redmine' style='font-size: 108.57142857142857%'>Redmine(1)</a> <a href='/blog/categories/talk' style='font-size: 108.57142857142857%'>Talk(1)</a> <a href='/blog/categories/tools' style='font-size: 108.57142857142857%'>Tools(1)</a> <a href='/blog/categories/tumblr' style='font-size: 108.57142857142857%'>Tumblr(1)</a> <a href='/blog/categories/tunnel-broker' style='font-size: 108.57142857142857%'>Tunnel broker(1)</a> <a href='/blog/categories/tutorial' style='font-size: 160.0%'>Tutorial(7)</a> <a href='/blog/categories/yahoo-keykey' style='font-size: 108.57142857142857%'>Yahoo!keykey(1)</a> <a href='/blog/categories/yii' style='font-size: 160.0%'>Yii(7)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/ascc' style='font-size: 108.57142857142857%'>Ascc(1)</a> <a href='/blog/categories/blog' style='font-size: 108.57142857142857%'>Blog(1)</a> <a href='/blog/categories/career' style='font-size: 108.57142857142857%'>Career(1)</a> <a href='/blog/categories/cocoaheads' style='font-size: 108.57142857142857%'>Cocoaheads(1)</a> <a href='/blog/categories/dropbox' style='font-size: 108.57142857142857%'>Dropbox(1)</a> <a href='/blog/categories/git' style='font-size: 125.71428571428572%'>Git(3)</a> <a href='/blog/categories/gitolite' style='font-size: 108.57142857142857%'>Gitolite(1)</a> <a href='/blog/categories/gw6c' style='font-size: 108.57142857142857%'>Gw6c(1)</a> <a href='/blog/categories/ios' style='font-size: 108.57142857142857%'>Ios(1)</a> <a href='/blog/categories/ipv6' style='font-size: 108.57142857142857%'>Ipv6(1)</a> <a href='/blog/categories/job' style='font-size: 108.57142857142857%'>Job(1)</a> <a href='/blog/categories/mac' style='font-size: 108.57142857142857%'>Mac(1)</a> <a href='/blog/categories/mobile-safari' style='font-size: 108.57142857142857%'>Mobile safari(1)</a> <a href='/blog/categories/octopress' style='font-size: 108.57142857142857%'>Octopress(1)</a> <a href='/blog/categories/osx' style='font-size: 108.57142857142857%'>Osx(1)</a> <a href='/blog/categories/php' style='font-size: 142.85714285714286%'>Php(5)</a> <a href='/blog/categories/redmine' style='font-size: 108.57142857142857%'>Redmine(1)</a> <a href='/blog/categories/talk' style='font-size: 108.57142857142857%'>Talk(1)</a> <a href='/blog/categories/tools' style='font-size: 108.57142857142857%'>Tools(1)</a> <a href='/blog/categories/tumblr' style='font-size: 108.57142857142857%'>Tumblr(1)</a> <a href='/blog/categories/tunnel-broker' style='font-size: 108.57142857142857%'>Tunnel broker(1)</a> <a href='/blog/categories/tutorial' style='font-size: 160.0%'>Tutorial(7)</a> <a href='/blog/categories/yahoo-keykey' style='font-size: 108.57142857142857%'>Yahoo!keykey(1)</a> <a href='/blog/categories/yii' style='font-size: 160.0%'>Yii(7)</a> </span>
 </section>
 <section>
 <h1>License</h1>
