@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mobile safari | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/mobile-safari/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2013-01-19T04:27:29+08:00</updated>
+  <updated>2013-01-19T11:53:53+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -43,7 +43,7 @@
 
 <p>根據 <a href="http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html">apple 的文件</a>指出，這是 iOS6 之後 safari 所支援的新功能，你不用再用自製的方式在你的網站上彈出一個 Banner 宣傳你的 iOS app 了，你可以運用這個新的 meta tag，讓 iOS 由一個統一的介面來幫你完成這件事。</p>
 
-<p>```
+<p>```html apple-itunes-app
 &lt;meta
   name="apple-itunes-app"
   content="</p>
@@ -60,7 +60,7 @@ app-argument=myURL"
 
 <p>下面是 tumblr 的寫法：</p>
 
-<p>```
+<p>```html apple-itunes-app
 &lt;meta
   name="apple-itunes-app"
   content="</p>

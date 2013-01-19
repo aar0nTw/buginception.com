@@ -4,7 +4,7 @@
   <title><![CDATA[[bug:inception]]]></title>
   <link href="http://blog.buginception.com/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2013-01-19T04:27:29+08:00</updated>
+  <updated>2013-01-19T11:53:53+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -43,20 +43,21 @@
 
 <p>根據 <a href="http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html">apple 的文件</a>指出，這是 iOS6 之後 safari 所支援的新功能，你不用再用自製的方式在你的網站上彈出一個 Banner 宣傳你的 iOS app 了，你可以運用這個新的 meta tag，讓 iOS 由一個統一的介面來幫你完成這件事。</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>apple-itunes-app</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;meta
-</span><span class='line'>  name="apple-itunes-app"
-</span><span class='line'>  content="
-</span><span class='line'>    app-id=myAppStoreID, 
-</span><span class='line'>    affiliate-data=myAffiliateData, 
-</span><span class='line'>    app-argument=myURL"
-</span><span class='line'>    &gt;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span>
+</span><span class='line'>  <span class="na">name=</span><span class="s">&quot;apple-itunes-app&quot;</span>
+</span><span class='line'>  <span class="na">content=</span><span class="s">&quot;</span>
+</span><span class='line'><span class="s">    app-id=myAppStoreID, </span>
+</span><span class='line'><span class="s">    affiliate-data=myAffiliateData, </span>
+</span><span class='line'><span class="s">    app-argument=myURL&quot;</span>
+</span><span class='line'>    <span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p></p>
@@ -65,18 +66,19 @@
 
 <p>下面是 tumblr 的寫法：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>apple-itunes-app</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;meta 
-</span><span class='line'>  name="apple-itunes-app" 
-</span><span class='line'>  content="
-</span><span class='line'>    app-id=305343404,
-</span><span class='line'>    app-argument=tumblr://x-callback-url/dashboard?referrer=smart-app-banner"
-</span><span class='line'>&gt;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span>
+</span><span class='line'>  <span class="na">name=</span><span class="s">&quot;apple-itunes-app&quot;</span>
+</span><span class='line'>  <span class="na">content=</span><span class="s">&quot;</span>
+</span><span class='line'><span class="s">    app-id=305343404,</span>
+</span><span class='line'><span class="s">    app-argument=tumblr://x-callback-url/dashboard?referrer=smart-app-banner&quot;</span>
+</span><span class='line'><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>國內其實有些服務已經加上了這個 tag，還沒有加入這個 tag 或是還在使用舊方法的朋友們，趕快在你的 web 頁面上加入這個 tag 吧 <i class='emoji grin'></i></p>
