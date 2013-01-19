@@ -29,7 +29,7 @@ categories: [mobile safari,ios]
 
 根據 [apple 的文件](http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html)指出，這是 iOS6 之後 safari 所支援的新功能，你不用再用自製的方式在你的網站上彈出一個 Banner 宣傳你的 iOS app 了，你可以運用這個新的 meta tag，讓 iOS 由一個統一的介面來幫你完成這件事。
 
-```
+```html apple-itunes-app
 <meta
   name="apple-itunes-app"
   content="
@@ -43,7 +43,7 @@ categories: [mobile safari,ios]
 
 下面是 tumblr 的寫法：
 
-```
+```html apple-itunes-app
 <meta 
   name="apple-itunes-app" 
   content="
