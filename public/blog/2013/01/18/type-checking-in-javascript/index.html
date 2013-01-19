@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>iOS6 中的 apple-itunes-app tag - [bug:inception]</title>
+  <title>Javascript 中如何正確判斷類型 - [bug:inception]</title>
   <meta name="author" content="Aaron Huang">
 
   
-  <meta name="description" content="上週某一天，我在逛 tumblr 的時候，發現了一個有趣的 meta tag，Jamie Sa ( @jamex ) 他逼我一定要寫一篇文講這個。 當我們運用 iPhone 逛到某些網站的時候，會看到他的最上方出現了一個 itunes 的 Banner，像是下面這樣： 其實要知道 Device &hellip;">
+  <meta name="description" content="JavaScript 中如何正確的判斷類型，這東西也許基本，但其實隱藏了許多細節，雖然已經 2013 年了，在 JavaScript 中判斷正確類型依然是個悲劇 (無誤) typeof 先講講 typeof typeof1
+2
+3
+typeof &quot;foo&quot; // string &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.buginception.com/blog/2013/01/12/apple-itunes-app-meta-tag">
+  <link rel="canonical" href="http://blog.buginception.com/blog/2013/01/18/type-checking-in-javascript">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -151,7 +154,7 @@
   
   <header>
     
-      <h1 class="entry-title">iOS6 中的 apple-itunes-app tag</h1>
+      <h1 class="entry-title">Javascript 中如何正確判斷類型</h1>
     
     
       <p class="meta">
@@ -167,7 +170,7 @@
   
 
 
-<time datetime="2013-01-12T16:05:00+08:00" pubdate data-updated="true">Jan 12<span>th</span>, 2013</time>
+<time datetime="2013-01-18T23:29:00+08:00" pubdate data-updated="true">Jan 18<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -176,70 +179,31 @@
   </header>
 
 
-<div class="entry-content"><p><img src="http://cdn.buginception.com/public/images/tumblr-iphone-app2.png" alt="image" /></p>
+<div class="entry-content"><blockquote><p>JavaScript 中如何正確的判斷類型，這東西也許基本，但其實隱藏了許多細節，雖然已經 2013 年了，在 JavaScript 中判斷正確類型依然是個悲劇 (無誤)</p></blockquote>
 
-<blockquote><p>上週某一天，我在逛 tumblr 的時候，發現了一個有趣的 meta tag，Jamie Sa ( <a href="http://twitter.com/jamex">@jamex</a> ) 他逼我一定要寫一篇文講這個。<i class='emoji scream'></i></p></blockquote>
+<h2>typeof</h2>
 
-<p>當我們運用 iPhone 逛到某些網站的時候，會看到他的最上方出現了一個 itunes 的 Banner，像是下面這樣：</p>
+<p>先講講 typeof</p>
 
-<!-- more -->
-
-
-<p><img src="http://cdn.buginception.com/public/images/tumblr-iphone-app.png" alt="tumblr" /></p>
-
-<p>其實要知道 Device 上有沒有自己的 app 在以往的作法並不難，只要 App 去攔截一個 Custom URL schema，然後網頁發送一個 Request，例如 <code>tumblr://</code>，JavaScript 這邊去擷取成功跟失敗的事件即可。</p>
-
-<p>但是，當我發現我刪除該服務的 app 時，這個 Banner 變成了下面這個樣子：</p>
-
-<p><img src="http://cdn.buginception.com/public/images/tumblr-iphone-app2.png" alt="image" /></p>
-
-<p>!!! (狀態顯示為大驚 <i class='emoji astonished'></i><i class='emoji astonished'></i><i class='emoji astonished'></i>)</p>
-
-<p>這肯定不是以前那種做法，這個時候新版 safari 的 device inspector 就派上用場了，讓我來看看這是什麼巫術 <i class='emoji smirk'></i></p>
-
-<p><img src="http://cdn.buginception.com/public/images/app-itunes-meta.png" alt="image" /></p>
-
-<p>根據 <a href="http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html">apple 的文件</a>指出，這是 iOS6 之後 safari 所支援的新功能，你不用再用自製的方式在你的網站上彈出一個 Banner 宣傳你的 iOS app 了，你可以運用這個新的 meta tag，讓 iOS 由一個統一的介面來幫你完成這件事。</p>
-
-<figure class='code'><figcaption><span>apple-itunes-app</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>typeof</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span>
-</span><span class='line'>  <span class="na">name=</span><span class="s">&quot;apple-itunes-app&quot;</span>
-</span><span class='line'>  <span class="na">content=</span><span class="s">&quot;</span>
-</span><span class='line'><span class="s">    app-id=myAppStoreID, </span>
-</span><span class='line'><span class="s">    affiliate-data=myAffiliateData, </span>
-</span><span class='line'><span class="s">    app-argument=myURL&quot;</span>
-</span><span class='line'>    <span class="nt">&gt;</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="k">typeof</span> <span class="s2">&quot;foo&quot;</span>          <span class="c1">// string</span>
+</span><span class='line'><span class="k">typeof</span> <span class="mi">123</span>            <span class="c1">// number</span>
+</span><span class='line'><span class="k">typeof</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){})</span> <span class="c1">// function</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p></p>
+<p>上面看起來挺正常的</p>
 
-<p><code>app-argument</code> 是一個選擇性的欄位，你可以選擇攔截一個特殊的 URL schema 並透過這個參數讓使用者能夠轉到 app 上對應的頁面。</p>
-
-<p>下面是 tumblr 的寫法：</p>
-
-<figure class='code'><figcaption><span>apple-itunes-app</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span>
-</span><span class='line'>  <span class="na">name=</span><span class="s">&quot;apple-itunes-app&quot;</span>
-</span><span class='line'>  <span class="na">content=</span><span class="s">&quot;</span>
-</span><span class='line'><span class="s">    app-id=305343404,</span>
-</span><span class='line'><span class="s">    app-argument=tumblr://x-callback-url/dashboard?referrer=smart-app-banner&quot;</span>
-</span><span class='line'><span class="nt">&gt;</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="k">typeof</span> <span class="p">[]</span>    <span class="c1">// object</span>
+</span><span class='line'><span class="k">typeof</span> <span class="kc">null</span>  <span class="c1">// object !!(?)</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>國內其實有些服務已經加上了這個 tag，還沒有加入這個 tag 或是還在使用舊方法的朋友們，趕快在你的 web 頁面上加入這個 tag 吧 <i class='emoji grin'></i></p>
+
 </div>
 
 
@@ -262,12 +226,12 @@
   
 
 
-<time datetime="2013-01-12T16:05:00+08:00" pubdate data-updated="true">Jan 12<span>th</span>, 2013</time>
+<time datetime="2013-01-18T23:29:00+08:00" pubdate data-updated="true">Jan 18<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/ios/'>ios</a>, <a class='category' href='/blog/categories/mobile-safari/'>mobile safari</a>
+    <a class='category' href='/blog/categories/javascript/'>javascript</a>
   
 </span>
 
@@ -276,7 +240,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.buginception.com/blog/2013/01/12/apple-itunes-app-meta-tag/" data-via="aar0ntw" data-counturl="http://blog.buginception.com/blog/2013/01/12/apple-itunes-app-meta-tag/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://blog.buginception.com/blog/2013/01/18/type-checking-in-javascript/" data-via="aar0ntw" data-counturl="http://blog.buginception.com/blog/2013/01/18/type-checking-in-javascript/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -289,10 +253,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/10/13/recap-git-branching-model/" title="Previous Post: 成功的 Git 分支模式">&laquo; 成功的 Git 分支模式</a>
+        <a class="basic-alignment left" href="/blog/2013/01/12/apple-itunes-app-meta-tag/" title="Previous Post: iOS6 中的 apple-itunes-app tag">&laquo; iOS6 中的 apple-itunes-app tag</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/01/18/type-checking-in-javascript/" title="next Post: Javascript 中如何正確判斷類型">Javascript 中如何正確判斷類型 &raquo;</a>
       
     </p>
   </footer>
@@ -415,8 +377,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.buginception.com/blog/2013/01/12/apple-itunes-app-meta-tag/';
-        var disqus_url = 'http://blog.buginception.com/blog/2013/01/12/apple-itunes-app-meta-tag/';
+        var disqus_identifier = 'http://blog.buginception.com/blog/2013/01/18/type-checking-in-javascript/';
+        var disqus_url = 'http://blog.buginception.com/blog/2013/01/18/type-checking-in-javascript/';
         var disqus_script = 'embed.js';
       
     (function () {
