@@ -176,7 +176,7 @@
   </header>
 
 
-<div class="entry-content"><p><img src="/images/tumblr-iphone-app2.png" alt="image" /></p>
+<div class="entry-content"><p><img src="http://cdn.buginception.com/public/images/tumblr-iphone-app2.png" alt="image" /></p>
 
 <blockquote><p>上週某一天，我在逛 tumblr 的時候，發現了一個有趣的 meta tag，Jamie Sa ( <a href="http://twitter.com/jamex">@jamex</a> ) 他逼我一定要寫一篇文講這個。<i class='emoji scream'></i></p></blockquote>
 
@@ -185,19 +185,19 @@
 <!-- more -->
 
 
-<p><img src="/images/tumblr-iphone-app.png" alt="tumblr" /></p>
+<p><img src="http://cdn.buginception.com/public/images/tumblr-iphone-app.png" alt="tumblr" /></p>
 
 <p>其實要知道 Device 上有沒有自己的 app 在以往的作法並不難，只要 App 去攔截一個 Custom URL schema，然後網頁發送一個 Request，例如 <code>tumblr://</code>，JavaScript 這邊去擷取成功跟失敗的事件即可。</p>
 
 <p>但是，當我發現我刪除該服務的 app 時，這個 Banner 變成了下面這個樣子：</p>
 
-<p><img src="/images/tumblr-iphone-app2.png" alt="image" /></p>
+<p><img src="http://cdn.buginception.com/public/images/tumblr-iphone-app2.png" alt="image" /></p>
 
 <p>!!! (狀態顯示為大驚 <i class='emoji astonished'></i><i class='emoji astonished'></i><i class='emoji astonished'></i>)</p>
 
 <p>這肯定不是以前那種做法，這個時候新版 safari 的 device inspector 就派上用場了，讓我來看看這是什麼巫術 <i class='emoji smirk'></i></p>
 
-<p><img src="/images/app-itunes-meta.png" alt="image" /></p>
+<p><img src="http://cdn.buginception.com/public/images/app-itunes-meta.png" alt="image" /></p>
 
 <p>根據 <a href="http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html">apple 的文件</a>指出，這是 iOS6 之後 safari 所支援的新功能，你不用再用自製的方式在你的網站上彈出一個 Banner 宣傳你的 iOS app 了，你可以運用這個新的 meta tag，讓 iOS 由一個統一的介面來幫你完成這件事。</p>
 

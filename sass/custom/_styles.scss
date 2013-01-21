@@ -1,10 +1,8 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 body > header {
-   background: image-url('head.jpg') no-repeat;
+   background: url('http://cdn.buginception.com/public/images/head.jpeg') no-repeat;
    padding-bottom: 0.5em;
-   background-position-x: -40px;
-   background-position-y: -430px;
    margin-bottom:0.5em;
    margin-top:0.5em;
    h1{

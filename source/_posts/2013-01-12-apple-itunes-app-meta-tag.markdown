@@ -5,7 +5,7 @@ date: 2013-01-12 16:05
 comments: true
 categories: [mobile safari,ios]
 ---
-![image](/images/tumblr-iphone-app2.png)
+![image](http://cdn.buginception.com/public/images/tumblr-iphone-app2.png)
 
 > 上週某一天，我在逛 tumblr 的時候，發現了一個有趣的 meta tag，Jamie Sa ( [@jamex](http://twitter.com/jamex) ) 他逼我一定要寫一篇文講這個。{% emoji scream %}
 
@@ -13,19 +13,19 @@ categories: [mobile safari,ios]
 
 <!-- more -->
 
-![tumblr](/images/tumblr-iphone-app.png)
+![tumblr](http://cdn.buginception.com/public/images/tumblr-iphone-app.png)
 
 其實要知道 Device 上有沒有自己的 app 在以往的作法並不難，只要 App 去攔截一個 Custom URL schema，然後網頁發送一個 Request，例如 `tumblr://`，JavaScript 這邊去擷取成功跟失敗的事件即可。
 
 但是，當我發現我刪除該服務的 app 時，這個 Banner 變成了下面這個樣子：
 
-![image](/images/tumblr-iphone-app2.png)
+![image](http://cdn.buginception.com/public/images/tumblr-iphone-app2.png)
 
 !!! (狀態顯示為大驚 {% emoji astonished %}{% emoji astonished %}{% emoji astonished %})
 
 這肯定不是以前那種做法，這個時候新版 safari 的 device inspector 就派上用場了，讓我來看看這是什麼巫術 {% emoji smirk %}
 
-![image](/images/app-itunes-meta.png)
+![image](http://cdn.buginception.com/public/images/app-itunes-meta.png)
 
 根據 [apple 的文件](http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html)指出，這是 iOS6 之後 safari 所支援的新功能，你不用再用自製的方式在你的網站上彈出一個 Banner 宣傳你的 iOS app 了，你可以運用這個新的 meta tag，讓 iOS 由一個統一的介面來幫你完成這件事。
 
