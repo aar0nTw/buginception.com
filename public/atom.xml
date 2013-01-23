@@ -4,7 +4,7 @@
   <title><![CDATA[[bug:inception]]]></title>
   <link href="http://blog.buginception.com/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2013-01-21T13:08:24+08:00</updated>
+  <updated>2013-01-21T13:18:04+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Javascript 中如何正確判斷類型]]></title>
+    <link href="http://blog.buginception.com/blog/2013/01/18/type-checking-in-javascript/"/>
+    <updated>2013-01-18T23:29:00+08:00</updated>
+    <id>http://blog.buginception.com/blog/2013/01/18/type-checking-in-javascript</id>
+    <content type="html"><![CDATA[<p><img src="http://cdn.buginception.com/public/images/7147080735_95308bc455_b.jpeg" alt="image" /></p>
+
+<p>( image via <a href="http://www.flickr.com/photos/livenature/7147080735/">Franco Folini</a> )</p>
+
+<blockquote><p>JavaScript 中如何正確的判斷類型，這東西也許基本，但其實隱藏了許多細節，雖然已經 2013 年了，在 JavaScript 中判斷正確類型依然是個悲劇 (無誤)</p></blockquote>
+
+<h2>typeof</h2>
+
+<p>先講講 typeof</p>
+
+<figure class='code'><figcaption><span>typeof</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="k">typeof</span> <span class="s2">&quot;foo&quot;</span>          <span class="c1">// string</span>
+</span><span class='line'><span class="k">typeof</span> <span class="mi">123</span>            <span class="c1">// number</span>
+</span><span class='line'><span class="k">typeof</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){})</span> <span class="c1">// function</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上面看起來挺正常的</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="k">typeof</span> <span class="p">[]</span>    <span class="c1">// object</span>
+</span><span class='line'><span class="k">typeof</span> <span class="kc">null</span>  <span class="c1">// object !!(?)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[iOS6 中的 apple-itunes-app tag]]></title>

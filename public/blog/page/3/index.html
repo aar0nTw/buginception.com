@@ -9,8 +9,7 @@
   <meta name="author" content="Aaron Huang">
 
   
-  <meta name="description" content="這一篇可能是一個比較短的篇幅，來講環境建置的部份，上一篇已經有稍微的講到了環境需求，那我也不在重複一次，接著請下載最新的YiiFramework Yii 官方網站下載 或者是github上熱心人士非官方的source，目前更新到1.1.9 1
-$ git clone https://github. &hellip;">
+  <meta name="description" content="這篇筆記兼分享一下如何使用Dropbox簡單建立git remote進行多人協同開發。 當然不是單純的把專案開在Dropbox folder而已，那Source可是會亂掉的:P ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -149,6 +148,51 @@ $ git clone https://github. &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/22/use-git-on-dropbox/">用Dropbox來當做Git remote</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-22T01:54:00+08:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2012</time>
+        
+         | <a href="/blog/2012/02/22/use-git-on-dropbox/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>這篇筆記兼分享一下如何使用<a href="www.dropbox.com">Dropbox</a>簡單建立git remote進行多人協同開發。</p>
+
+<p>當然不是單純的把專案開在Dropbox folder而已，那Source可是會亂掉的:P</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/02/22/use-git-on-dropbox/">More &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -358,68 +402,6 @@ $ git clone https://github. &hellip;">
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/11/yii-assign-attributes/">[Yii]Assign Attribute&#8217;s issue</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-11T15:28:00+08:00" pubdate data-updated="true">Jan 11<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/01/11/yii-assign-attributes/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>通常情況下，我們習慣這樣來給予Model值</p>
-
-<figure class='code'><figcaption><span>FooController</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
-</span><span class='line'><span class="c1">//....上略</span>
-</span><span class='line'><span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
-</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;Foo&#39;</span><span class="p">])){</span>
-</span><span class='line'>  <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">attributes</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;Foo&#39;</span><span class="p">];</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>這叫做 <strong>massively assigned</strong></p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/01/11/yii-assign-attributes/">More &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -435,6 +417,10 @@ $ git clone https://github. &hellip;">
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/18/type-checking-in-javascript/">Javascript 中如何正確判斷類型</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/01/12/apple-itunes-app-meta-tag/">iOS6 中的 apple-itunes-app tag</a>
@@ -472,10 +458,6 @@ $ git clone https://github. &hellip;">
         <a href="/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/">[OSX]關閉Yahoo!輸入法的一點通服務</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2012/02/22/use-git-on-dropbox/">用Dropbox來當做Git remote</a>
-      </li>
-    
   </ul>
 </section>
 <section>
@@ -493,7 +475,7 @@ $ git clone https://github. &hellip;">
 </section>
 <section>
   <h1>Tag Cloud</h1>
-    <span id="tag-cloud"><a href='/blog/categories/ascc' style='font-size: 108.57142857142857%'>Ascc(1)</a> <a href='/blog/categories/blog' style='font-size: 108.57142857142857%'>Blog(1)</a> <a href='/blog/categories/career' style='font-size: 108.57142857142857%'>Career(1)</a> <a href='/blog/categories/cocoaheads' style='font-size: 108.57142857142857%'>Cocoaheads(1)</a> <a href='/blog/categories/dropbox' style='font-size: 108.57142857142857%'>Dropbox(1)</a> <a href='/blog/categories/git' style='font-size: 125.71428571428572%'>Git(3)</a> <a href='/blog/categories/gitolite' style='font-size: 108.57142857142857%'>Gitolite(1)</a> <a href='/blog/categories/gw6c' style='font-size: 108.57142857142857%'>Gw6c(1)</a> <a href='/blog/categories/ios' style='font-size: 108.57142857142857%'>Ios(1)</a> <a href='/blog/categories/ipv6' style='font-size: 108.57142857142857%'>Ipv6(1)</a> <a href='/blog/categories/job' style='font-size: 108.57142857142857%'>Job(1)</a> <a href='/blog/categories/mac' style='font-size: 108.57142857142857%'>Mac(1)</a> <a href='/blog/categories/mobile-safari' style='font-size: 108.57142857142857%'>Mobile safari(1)</a> <a href='/blog/categories/octopress' style='font-size: 108.57142857142857%'>Octopress(1)</a> <a href='/blog/categories/osx' style='font-size: 108.57142857142857%'>Osx(1)</a> <a href='/blog/categories/php' style='font-size: 142.85714285714286%'>Php(5)</a> <a href='/blog/categories/redmine' style='font-size: 108.57142857142857%'>Redmine(1)</a> <a href='/blog/categories/talk' style='font-size: 108.57142857142857%'>Talk(1)</a> <a href='/blog/categories/tools' style='font-size: 108.57142857142857%'>Tools(1)</a> <a href='/blog/categories/tumblr' style='font-size: 108.57142857142857%'>Tumblr(1)</a> <a href='/blog/categories/tunnel-broker' style='font-size: 108.57142857142857%'>Tunnel broker(1)</a> <a href='/blog/categories/tutorial' style='font-size: 160.0%'>Tutorial(7)</a> <a href='/blog/categories/yahoo-keykey' style='font-size: 108.57142857142857%'>Yahoo!keykey(1)</a> <a href='/blog/categories/yii' style='font-size: 160.0%'>Yii(7)</a> </span>
+    <span id="tag-cloud"><a href='/blog/categories/ascc' style='font-size: 108.57142857142857%'>Ascc(1)</a> <a href='/blog/categories/blog' style='font-size: 108.57142857142857%'>Blog(1)</a> <a href='/blog/categories/career' style='font-size: 108.57142857142857%'>Career(1)</a> <a href='/blog/categories/cocoaheads' style='font-size: 108.57142857142857%'>Cocoaheads(1)</a> <a href='/blog/categories/dropbox' style='font-size: 108.57142857142857%'>Dropbox(1)</a> <a href='/blog/categories/git' style='font-size: 125.71428571428572%'>Git(3)</a> <a href='/blog/categories/gitolite' style='font-size: 108.57142857142857%'>Gitolite(1)</a> <a href='/blog/categories/gw6c' style='font-size: 108.57142857142857%'>Gw6c(1)</a> <a href='/blog/categories/ios' style='font-size: 108.57142857142857%'>Ios(1)</a> <a href='/blog/categories/ipv6' style='font-size: 108.57142857142857%'>Ipv6(1)</a> <a href='/blog/categories/javascript' style='font-size: 108.57142857142857%'>Javascript(1)</a> <a href='/blog/categories/job' style='font-size: 108.57142857142857%'>Job(1)</a> <a href='/blog/categories/mac' style='font-size: 108.57142857142857%'>Mac(1)</a> <a href='/blog/categories/mobile-safari' style='font-size: 108.57142857142857%'>Mobile safari(1)</a> <a href='/blog/categories/octopress' style='font-size: 108.57142857142857%'>Octopress(1)</a> <a href='/blog/categories/osx' style='font-size: 108.57142857142857%'>Osx(1)</a> <a href='/blog/categories/php' style='font-size: 142.85714285714286%'>Php(5)</a> <a href='/blog/categories/redmine' style='font-size: 108.57142857142857%'>Redmine(1)</a> <a href='/blog/categories/talk' style='font-size: 108.57142857142857%'>Talk(1)</a> <a href='/blog/categories/tools' style='font-size: 108.57142857142857%'>Tools(1)</a> <a href='/blog/categories/tumblr' style='font-size: 108.57142857142857%'>Tumblr(1)</a> <a href='/blog/categories/tunnel-broker' style='font-size: 108.57142857142857%'>Tunnel broker(1)</a> <a href='/blog/categories/tutorial' style='font-size: 160.0%'>Tutorial(7)</a> <a href='/blog/categories/yahoo-keykey' style='font-size: 108.57142857142857%'>Yahoo!keykey(1)</a> <a href='/blog/categories/yii' style='font-size: 160.0%'>Yii(7)</a> </span>
 </section>
 <section>
 <h1>License</h1>
