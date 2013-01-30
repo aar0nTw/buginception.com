@@ -9,9 +9,7 @@
   <meta name="author" content="Aaron Huang">
 
   
-  <meta name="description" content="( image via Franco Folini ) JavaScript 中如何正確的判斷類型，這東西也許基本，但其實隱藏了許多細節，雖然已經 2013 年了，在 JavaScript 中判斷正確類型依然是個悲劇 (無誤) typeof 先講講 typeof typeof1
-2
-3 &hellip;">
+  <meta name="description" content="( image via Franco Folini ) JavaScript 中如何正確的判斷類型，這東西也許基本，但其實隱藏了許多細節，雖然已經 2013 年了，但是這個看似簡單的問題在 JavaScript 中也許不會有正確且單一的答案。 在 JavaScript 中判斷類型，有非常多種選擇 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -156,7 +154,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/01/18/type-checking-in-javascript/">Javascript 中如何正確判斷類型</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/01/30/type-checking-in-javascript/">淺談類型判斷 in JavaScript</a></h1>
     
     
       <p class="meta">
@@ -172,9 +170,9 @@
   
 
 
-<time datetime="2013-01-18T23:29:00+08:00" pubdate data-updated="true">Jan 18<span>th</span>, 2013</time>
+<time datetime="2013-01-30T12:52:00+08:00" pubdate data-updated="true">Jan 30<span>th</span>, 2013</time>
         
-         | <a href="/blog/2013/01/18/type-checking-in-javascript/#disqus_thread">Comments</a>
+         | <a href="/blog/2013/01/30/type-checking-in-javascript/#disqus_thread">Comments</a>
         
       </p>
     
@@ -185,33 +183,16 @@
 
 <p>( image via <a href="http://www.flickr.com/photos/livenature/7147080735/">Franco Folini</a> )</p>
 
-<blockquote><p>JavaScript 中如何正確的判斷類型，這東西也許基本，但其實隱藏了許多細節，雖然已經 2013 年了，在 JavaScript 中判斷正確類型依然是個悲劇 (無誤)</p></blockquote>
+<blockquote><p>JavaScript 中如何正確的判斷類型，這東西也許基本，但其實隱藏了許多細節，雖然已經 2013 年了，但是這個看似簡單的問題在 JavaScript 中也許不會有正確且單一的答案。</p></blockquote>
 
-<h2>typeof</h2>
-
-<p>先講講 typeof</p>
-
-<figure class='code'><figcaption><span>typeof</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="k">typeof</span> <span class="s2">&quot;foo&quot;</span>          <span class="c1">// string</span>
-</span><span class='line'><span class="k">typeof</span> <span class="mi">123</span>            <span class="c1">// number</span>
-</span><span class='line'><span class="k">typeof</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){})</span> <span class="c1">// function</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>上面看起來挺正常的</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="k">typeof</span> <span class="p">[]</span>    <span class="c1">// object</span>
-</span><span class='line'><span class="k">typeof</span> <span class="kc">null</span>  <span class="c1">// object !!(?)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
+<p>在 JavaScript 中判斷類型，有非常多種選擇，但要記住，絕對不要只選用一種方式來判斷類型，因為不管是哪種選擇，都有其特異的行為與例外，適當的選擇變數的判斷方式，在 JavaScript 的寫作中是非常重要的。</p>
 
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/01/30/type-checking-in-javascript/">More &rarr;</a>
+    </footer>
   
 
 
@@ -426,7 +407,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/01/18/type-checking-in-javascript/">Javascript 中如何正確判斷類型</a>
+        <a href="/blog/2013/01/30/type-checking-in-javascript/">淺談類型判斷 in JavaScript</a>
       </li>
     
       <li class="post">
