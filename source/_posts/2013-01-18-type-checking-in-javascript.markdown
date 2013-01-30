@@ -170,3 +170,23 @@ Object.prototype.toString.apply(function(){}) // "[object Function]"
 ## 其他
 
 不少 framework 也有實作很多類型判斷的方法，下面是一例
+
+```js jQuery
+$.isWindow(window) // true
+```
+怎麼做的呢
+
+```js core.js#479
+isWindow: function( obj ) {                                                                                                                 
+    return obj != null && obj == obj.window;
+}
+```
+所以開一個這樣的 Object:
+```js
+var fakeWindow;
+fakeWindow = {};
+fakeWindow.window = fakeWindow;
+
+$.isWindow(fakeWindow) // true
+```
+你就騙過他了。

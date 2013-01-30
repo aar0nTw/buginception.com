@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2013-01-30T12:53:58+08:00</updated>
+  <updated>2013-01-30T22:12:42+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -189,6 +189,29 @@ Object.prototype.toString.apply(function(){}) // "[object Function]"
 <h2>其他</h2>
 
 <p>不少 framework 也有實作很多類型判斷的方法，下面是一例</p>
+
+<p><code>js jQuery
+$.isWindow(window) // true
+</code>
+怎麼做的呢</p>
+
+<p>```js core.js#479
+isWindow: function( obj ) {</p>
+
+<pre><code>return obj != null &amp;&amp; obj == obj.window;
+</code></pre>
+
+<p>}
+<code>
+所以開一個這樣的 Object:
+</code>js
+var fakeWindow;
+fakeWindow = {};
+fakeWindow.window = fakeWindow;</p>
+
+<p>$.isWindow(fakeWindow) // true
+```
+你就騙過他了。</p>
 ]]></content>
   </entry>
   
