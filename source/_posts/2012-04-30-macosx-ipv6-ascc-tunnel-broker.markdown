@@ -66,7 +66,7 @@ if_prefix=en0
 啟動吧！：
 
 ```bash ./tspc-advanced/bin
-//這是沒 install 的情況
+#這是沒 install 的情況
 $ pwd
 /Users/apple/Downloads/gw6c-6_0_1/tspc-advanced/bin
 $ sudo ./gw6c -f gw6c.conf
@@ -74,7 +74,7 @@ $ sudo ./gw6c -f gw6c.conf
 
 
 ```bash usr/local/gw6c
-//有 install 就直接來吧
+#有 install 就直接來吧
 $ pwd
 /usr/local/gw6c/bin
 $ sudo ./gw6c

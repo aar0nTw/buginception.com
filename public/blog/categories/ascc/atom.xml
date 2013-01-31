@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ascc | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/ascc/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2013-01-31T15:09:27+08:00</updated>
+  <updated>2013-01-31T22:49:12+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -81,19 +81,23 @@ if_prefix=en0
 </code>
 啟動吧！：</p>
 
-<p><code>bash ./tspc-advanced/bin
-//這是沒 install 的情況
-$ pwd
+<p>```bash ./tspc-advanced/bin</p>
+
+<h1>這是沒 install 的情況</h1>
+
+<p>$ pwd
 /Users/apple/Downloads/gw6c-6_0_1/tspc-advanced/bin
 $ sudo ./gw6c -f gw6c.conf
-</code></p>
+```</p>
 
-<p><code>bash usr/local/gw6c
-//有 install 就直接來吧
-$ pwd
+<p>```bash usr/local/gw6c</p>
+
+<h1>有 install 就直接來吧</h1>
+
+<p>$ pwd
 /usr/local/gw6c/bin
 $ sudo ./gw6c
-</code></p>
+```</p>
 
 <blockquote class="note">
 <p>
