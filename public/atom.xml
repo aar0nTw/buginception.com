@@ -4,7 +4,7 @@
   <title><![CDATA[[bug:inception]]]></title>
   <link href="http://blog.buginception.com/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2013-01-31T22:49:12+08:00</updated>
+  <updated>2013-02-06T23:37:24+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -12,6 +12,101 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Git 指令調味]]></title>
+    <link href="http://blog.buginception.com/blog/2013/02/06/the-git-condiment/"/>
+    <updated>2013-02-06T23:17:00+08:00</updated>
+    <id>http://blog.buginception.com/blog/2013/02/06/the-git-condiment</id>
+    <content type="html"><![CDATA[<p><img src="http://cdn.buginception.com/public/images/477bbb34c40ed50f2013c93702c588b6.png" alt="red chile" /></p>
+
+<p>( Image by <a href="http://www.behance.net/gallery/Indian-as-Apple-Pie/6206911">Nancy McCabe</a>, CC license )</p>
+
+<blockquote><p>本篇介紹常用 git 指令在實際工作上會使用的呼叫方式，從 <code>commit</code>、<code>push</code>、<code>pull</code>、<code>add</code> 等指令添加 option，使其更貼近於日常使用需求。</p></blockquote>
+
+<!-- more -->
+
+
+
+
+<figure class='code'><figcaption><span>1.diff</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git diff -b HEAD --
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>查看尚未 commit 的更動與目前版本的差異</p>
+
+<p><strong><em>加上 <code>-b</code> 或 <code>--ignore-space-change</code> 忽略空格的更動（例如縮排）</em></strong></p>
+
+<figure class='code'><figcaption><span>2.diff-2</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git diff HEAD HEAD^
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>查看當前版本與上一個版本之間的差異</p>
+
+<p><em>又 <code>HEAD~2</code> 是上兩個版本、<code>HEAD~3</code> 是上三個版本，類推。</em></p>
+
+<blockquote class="note">
+<p>
+運用 git 的 alias 功能設定自己的指令別名，精簡過長的指令與 option。
+</p>
+</blockquote>
+
+
+
+
+<figure class='code'><figcaption><span>3.push</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git push -u <span class="o">[</span>remote<span class="o">]</span> <span class="o">[</span>branch<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>push 到遠端。 <strong><em>加上 <code>-u</code> 或 <code>--set-upstream</code> 設定 upstream reference。</em></strong>，設定 <strong>upstream</strong> 後，之後可以直接 pull 不指定 remote branch</p>
+
+<figure class='code'><figcaption><span>4.push-2</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git push <span class="o">[</span>remote<span class="o">]</span> :<span class="o">[</span>branch<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+刪除 remote 上的 branch</p>
+
+<figure class='code'><figcaption><span>5.push-3</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git push --prune
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>push 並同時刪除 remote 上不存在於 local 的 branch</p>
+
+<figure class='code'><figcaption><span>6.fetch</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git fetch --prune
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>刪除 local 上有 remote-tracking 但 remote 已經不存在的 branch</p>
+
+<figure class='code'><figcaption><span>7.rebase</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git rebase <span class="o">[</span>branch<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>rebase 使用情況： <code>develop</code> branch 上剛 apply 了一個 pull-request，但是我<strong>已經在 local 上舊的 <code>develop</code> branch checkout 了一條新的 feature branch 上繼續往下動工了</strong>，那當我們 local 拉下新的 develop 後，準備發送一個新的 merge pull-request 之前，<strong><em>先在 feature branch 上做 <code>rebase develop</code> 的動作</em></strong>，將新舊 <code>develop</code> 的差異補齊，可以<strong>減少 merge conflic 的時間，並且用 rebase 的方式可以避免多餘的 merge 動作</strong>。</p>
+
+<figure class='code'><figcaption><span>8.checkout</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git checkout -b <span class="o">[</span>branch<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>切換 branch，<em>加上 <code>-b</code> 如果 branch 不存在直接開啟新的 branch。</em></p>
+
+<figure class='code'><figcaption><span>9.describe</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git describe --tags
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>顯示從最近的一個 tag 到目前版本經過了幾次 commit，這個指令我常用來確認兩個 branch 差了幾個 commit，<strong><em>拿來快速產一個版號也是很方便。XD</em></strong></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[淺談類型判斷 in JavaScript]]></title>

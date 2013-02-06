@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | [bug:inception]]]></title>
   <link href="http://blog.buginception.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://blog.buginception.com/"/>
-  <updated>2013-01-31T22:49:12+08:00</updated>
+  <updated>2013-02-06T23:37:24+08:00</updated>
   <id>http://blog.buginception.com/</id>
   <author>
     <name><![CDATA[Aaron Huang]]></name>
@@ -12,6 +12,86 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Git 指令調味]]></title>
+    <link href="http://blog.buginception.com/blog/2013/02/06/the-git-condiment/"/>
+    <updated>2013-02-06T23:17:00+08:00</updated>
+    <id>http://blog.buginception.com/blog/2013/02/06/the-git-condiment</id>
+    <content type="html"><![CDATA[<p><img src="http://cdn.buginception.com/public/images/477bbb34c40ed50f2013c93702c588b6.png" alt="red chile" /></p>
+
+<p>( Image by <a href="http://www.behance.net/gallery/Indian-as-Apple-Pie/6206911">Nancy McCabe</a>, CC license )</p>
+
+<blockquote><p>本篇介紹常用 git 指令在實際工作上會使用的呼叫方式，從 <code>commit</code>、<code>push</code>、<code>pull</code>、<code>add</code> 等指令添加 option，使其更貼近於日常使用需求。</p></blockquote>
+
+<!-- more -->
+
+
+<p><code>sh 1.diff
+$ git diff -b HEAD --
+</code></p>
+
+<p>查看尚未 commit 的更動與目前版本的差異</p>
+
+<p><strong><em>加上 <code>-b</code> 或 <code>--ignore-space-change</code> 忽略空格的更動（例如縮排）</em></strong></p>
+
+<p><code>sh 2.diff-2
+$ git diff HEAD HEAD^
+</code></p>
+
+<p>查看當前版本與上一個版本之間的差異</p>
+
+<p><em>又 <code>HEAD~2</code> 是上兩個版本、<code>HEAD~3</code> 是上三個版本，類推。</em></p>
+
+<blockquote class="note">
+<p>
+運用 git 的 alias 功能設定自己的指令別名，精簡過長的指令與 option。
+</p>
+</blockquote>
+
+
+<p><code>sh 3.push
+$ git push -u [remote] [branch]
+</code></p>
+
+<p>push 到遠端。 <strong><em>加上 <code>-u</code> 或 <code>--set-upstream</code> 設定 upstream reference。</em></strong>，設定 <strong>upstream</strong> 後，之後可以直接 pull 不指定 remote branch</p>
+
+<p><code>sh 4.push-2
+$ git push [remote] :[branch]
+</code>
+刪除 remote 上的 branch</p>
+
+<p><code>sh 5.push-3
+$ git push --prune
+</code></p>
+
+<p>push 並同時刪除 remote 上不存在於 local 的 branch</p>
+
+<p><code>sh 6.fetch
+$ git fetch --prune
+</code></p>
+
+<p>刪除 local 上有 remote-tracking 但 remote 已經不存在的 branch</p>
+
+<p><code>sh 7.rebase
+$ git rebase [branch]
+</code></p>
+
+<p>rebase 使用情況： <code>develop</code> branch 上剛 apply 了一個 pull-request，但是我<strong>已經在 local 上舊的 <code>develop</code> branch checkout 了一條新的 feature branch 上繼續往下動工了</strong>，那當我們 local 拉下新的 develop 後，準備發送一個新的 merge pull-request 之前，<strong><em>先在 feature branch 上做 <code>rebase develop</code> 的動作</em></strong>，將新舊 <code>develop</code> 的差異補齊，可以<strong>減少 merge conflic 的時間，並且用 rebase 的方式可以避免多餘的 merge 動作</strong>。</p>
+
+<p><code>sh 8.checkout
+$ git checkout -b [branch]
+</code></p>
+
+<p>切換 branch，<em>加上 <code>-b</code> 如果 branch 不存在直接開啟新的 branch。</em></p>
+
+<p><code>sh 9.describe
+$ git describe --tags
+</code></p>
+
+<p>顯示從最近的一個 tag 到目前版本經過了幾次 commit，這個指令我常用來確認兩個 branch 差了幾個 commit，<strong><em>拿來快速產一個版號也是很方便。XD</em></strong></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[成功的 Git 分支模式]]></title>
