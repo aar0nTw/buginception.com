@@ -1,0 +1,17 @@
+/*
+  Overwrite Grayshade theme
+  Author: Aaron Huang <aar0ntw>
+ */
+
+body {
+  background: #00896C
+}
+
+.container {
+  .left-col {
+    opacity: .7
+  }
+  .mid-col {
+    box-shadow: -1px 0 25px 1px rgba(#000, .3)
+  }
+}
