@@ -11,18 +11,19 @@ footer: true
 
 ![](http://gravatar.com/avatar/f085e1553be82bc8425469b5b235d664)
 
-碼農一枚，慢慢耕田中。
+Keep Calm and Work On.
 
-###經歷
+###Experience
 
-* [Waveface](http://waveface.com) , Cloud Software Developer ( 2012/09 ~ )
-* [Nexdoor.inc 宇宣數位媒體有限公司](http://www.nexdoor.cc) , Web Developer ( 2010/10 ~ 2012/08 )
-* [國立高雄第一科技大學 資訊管理系](http://mis.nkfust.edu.tw) , 學士 ( 2005/09 ~ 2009/06 )
+* [Faria.co](http://faria.co) , Web Dev/F2E ( Jun 2013 ~ present )
+* [Waveface](http://waveface.com) , Cloud Software Developer ( Sep, 2012 ~ Jun, 2013 )
+* [Nexdoor.inc](http://www.nexdoor.cc) , Web Developer ( Oct, 2010 ~ Aug, 2012 )
+* [National Kaohsiung First University of Science and Technology](http://mis.nkfust.edu.tw) , BS, Dept. Information Management ( Sep, 2005 ~ Jun, 2009 )
 
 ###Skill and Interest
 
-* PHP,Ruby,Python
 * JavaScript
+* PHP,Ruby,Python
 * Linux base, and Mac
 * All about web
 
