@@ -73,6 +73,9 @@ article{
 			height: auto;
 			@extend .basic-alignment;
 		}
+    img {
+      max-width: 640px;
+    }
 		blockquote{
 			background: $color-gray04;
 			border-left: 5px solid $color-gray03;
