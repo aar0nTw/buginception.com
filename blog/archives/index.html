@@ -1,0 +1,599 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Blog Archives - Aar0n Huang</title>
+	<meta name="author" content="Aaron Huang">
+
+	
+	<meta name="description" content="2013 Feb 6 git Comments Git 指令調味 Jan 30 javascript Comments 淺談類型判斷 in JavaScript Jan 12 ios, mobile safari Comments iOS6 中的 apple-itunes-app tag &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+	<link href="/atom.xml" rel="alternate" title="Aar0n Huang" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://blog.buginception.com/blog/archives/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<style>
+#banner_git{
+			height: 149px;
+			width: 149px;
+			overflow:hidden;
+			padding: 0;
+			margin: 0;
+			background: none;
+			position:absolute;
+			top:0;
+			right:0;
+			border-bottom:none;
+		}
+
+		#banner_git a{
+
+			display: block;
+			width: 190px;
+			font-size: 14px;
+			font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT",
+				"Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma,
+				Geneva, "Helvetica Neue", Helvetica, Arial, sans serif;
+			background-color: #333;
+			color: #FFF;
+			word-spacing: 2px;
+			text-decoration: none;
+			padding: 5px 15px 5px 25px;
+
+			position:relative;
+			left: 20px;
+			top: -37px;
+			text-align: center;
+
+			-moz-transform-origin: 0 0 ;
+			-moz-transform:rotate(45deg);
+			-moz-box-shadow:    1px 1px 5px 1px #666;
+
+			-webkit-transform-origin: 0 0 ;
+			-webkit-transform:rotate(45deg);
+			-webkit-box-shadow: 1px 1px 5px 1px #666;
+
+			-ms-transform-origin: 0 0 ;
+			-ms-transform:rotate(45deg);
+			-ms-box-shadow: 1px 1px 5px 1px #666;
+
+			transform-origin: 0 0 ;
+			transform:rotate(45deg);
+			box-shadow: 1px 1px 5px 1px #666;
+
+			background-image: linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			background-image: -o-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			background-image: -moz-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			background-image: -webkit-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			background-image: -ms-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+
+			background-image: -webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(0.03, #000000),
+				color-stop(0.05, #666666),
+				color-stop(0.07, #000000),
+				color-stop(0.93, #000000),
+				color-stop(0.95, #666666),
+				color-stop(0.97, #000000)
+			);
+
+		}
+
+</style>
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript" defer>
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("aaroms9733@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+</div>
+<hgroup>
+  <h1><a href="/">Aar0n Huang</a></h1>
+  
+</hgroup>
+
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="https://trello.com/b/NPAEWvsK" target=_blank>Reading List</a></li>
+  <!--<li><a href="/blog/2012/01/19/yii-zhhant-tutorial-catelog/">YiiFramework</a></li>-->
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/aar0ntw" title="Twitter">Twitter</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><div itemscope itemtype="http://schema.org/Blog">
+
+	
+
+
+	
+	
+	<section class="archives"><h1 class="year">2013</h1>
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-02-06T23:17:00+08:00" itemprop="datePublished">Feb  6</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/git/'>git</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2013/02/06/the-git-condiment/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/02/06/the-git-condiment/">Git 指令調味</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-01-30T12:52:00+08:00" itemprop="datePublished">Jan 30</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/javascript/'>javascript</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2013/01/30/type-checking-in-javascript/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/01/30/type-checking-in-javascript/">淺談類型判斷 in JavaScript</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2013-01-12T16:05:00+08:00" itemprop="datePublished">Jan 12</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/ios/'>ios</a>, <a class='category' href='/blog/categories/mobile-safari/'>mobile safari</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2013/01/12/apple-itunes-app-meta-tag/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/01/12/apple-itunes-app-meta-tag/">iOS6 中的 apple-itunes-app tag</a></h1>
+</article>
+
+	
+
+
+	
+	
+		</section>
+	
+	<section class="archives"><h1 class="year">2012</h1>
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-10-13T00:27:00+08:00" itemprop="datePublished">Oct 13</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/cocoaheads/'>cocoaheads</a>, <a class='category' href='/blog/categories/git/'>git</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/10/13/recap-git-branching-model/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/10/13/recap-git-branching-model/">成功的 Git 分支模式</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-09-16T02:14:00+08:00" itemprop="datePublished">Sep 16</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/talk/'>talk</a>, <a class='category' href='/blog/categories/tools/'>tools</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/09/16/something-about-pomodoro/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/09/16/something-about-pomodoro/">蕃茄工作法的二三事</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-08-27T23:10:00+08:00" itemprop="datePublished">Aug 27</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/career/'>career</a>, <a class='category' href='/blog/categories/job/'>job</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/08/27/new-job/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/08/27/new-job/">待業中 :-)</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-04-30T22:28:00+08:00" itemprop="datePublished">Apr 30</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/ascc/'>ascc</a>, <a class='category' href='/blog/categories/gw6c/'>gw6c</a>, <a class='category' href='/blog/categories/ipv6/'>ipv6</a>, <a class='category' href='/blog/categories/tunnel-broker/'>tunnel broker</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/04/30/macosx-ipv6-ascc-tunnel-broker/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/04/30/macosx-ipv6-ascc-tunnel-broker/">Mac OSX 下使用中研院的 tunnel broker</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-04-29T01:32:00+08:00" itemprop="datePublished">Apr 29</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/04/29/yii-mvc-structure/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/04/29/yii-mvc-structure/">[Yii]Ch.1-1 MVC 架構</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-04-02T12:36:00+08:00" itemprop="datePublished">Apr  2</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/redmine/'>Redmine</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/gitolite/'>gitolite</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/04/02/redmine-use-git-code-review/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/04/02/redmine-use-git-code-review/">在 Redmine 中加入 Git Repository</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-03-23T19:25:00+08:00" itemprop="datePublished">Mar 23</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/03/23/yii-say-hello-for-world/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/03/23/yii-say-hello-for-world/">[Yii]Ch.0-4 建立第一個Web app</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-02-29T23:38:00+08:00" itemprop="datePublished">Feb 29</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/mac/'>mac</a>, <a class='category' href='/blog/categories/osx/'>osx</a>, <a class='category' href='/blog/categories/yahoo-keykey/'>yahoo!keykey</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/02/29/disable-yahoo-keykey-onekey-on-mac/">[OSX]關閉Yahoo!輸入法的一點通服務</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-02-22T01:54:00+08:00" itemprop="datePublished">Feb 22</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/dropbox/'>dropbox</a>, <a class='category' href='/blog/categories/git/'>git</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/02/22/use-git-on-dropbox/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/02/22/use-git-on-dropbox/">用Dropbox來當做Git remote</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-02-09T16:52:00+08:00" itemprop="datePublished">Feb  9</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/02/09/yii-environment/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/02/09/yii-environment/">[Yii]Ch.0-3 Yii環境建置</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-01-28T16:21:00+08:00" itemprop="datePublished">Jan 28</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/01/28/preparation/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/01/28/preparation/">[Yii]Ch.0-2 事前準備</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-01-22T19:55:00+08:00" itemprop="datePublished">Jan 22</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/01/22/why-use-yii/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/01/22/why-use-yii/">[Yii]Ch.0-1 YiiFramework簡介 </a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-01-19T01:03:00+08:00" itemprop="datePublished">Jan 19</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/php/'>php</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/yii/'>yii</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/01/19/yii-zhhant-tutorial-catelog/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/01/19/yii-zhhant-tutorial-catelog/">[Yii]繁體中文教程大綱</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-01-11T15:28:00+08:00" itemprop="datePublished">Jan 11</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/yii/'>yii</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/01/11/yii-assign-attributes/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/01/11/yii-assign-attributes/">[Yii]Assign Attribute&#8217;s issue</a></h1>
+</article>
+
+	
+
+
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<span class="date"><time datetime="2012-01-05T18:19:00+08:00" itemprop="datePublished">Jan  5</time></span>
+		<br>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/tumblr/'>tumblr</a>
+
+
+</span>
+	    
+	    <span class="comments"><a href="/blog/2012/01/05/switching-from-tumblr-to-octopress/#disqus_thread">Comments</a></span>
+	    
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/01/05/switching-from-tumblr-to-octopress/">轉換至Octopress.</a></h1>
+</article>
+
+  </section>
+</div></div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2014 - Aaron Huang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit">Theme by <a href="http://melandri.net/2012/02/14/octopress-theme-customization/">Alessandro Melandri</a></span>
+</p>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'aar0n-blog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-26597036-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

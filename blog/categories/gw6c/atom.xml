@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: gw6c | Aar0n Huang]]></title>
+  <link href="http://blog.buginception.com/blog/categories/gw6c/atom.xml" rel="self"/>
+  <link href="http://blog.buginception.com/"/>
+  <updated>2014-08-07T00:19:15+08:00</updated>
+  <id>http://blog.buginception.com/</id>
+  <author>
+    <name><![CDATA[Aaron Huang]]></name>
+    <email><![CDATA[aaroms9733@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mac OSX 下使用中研院的 tunnel broker]]></title>
+    <link href="http://blog.buginception.com/blog/2012/04/30/macosx-ipv6-ascc-tunnel-broker/"/>
+    <updated>2012-04-30T22:28:00+08:00</updated>
+    <id>http://blog.buginception.com/blog/2012/04/30/macosx-ipv6-ascc-tunnel-broker</id>
+    <content type="html"><![CDATA[<blockquote><p>今天 <a href="http://disp.cc/b/570-3ymq">[問卦] 中華電信HiNet連YouTube慢的真相?</a> 這件事好像很夯，包含之前 Mobile01 上面也有相關文章：
+<a href="http://www.mobile01.com/topicdetail.php?f=507&amp;t=2612039&amp;p=1">中華電信HiNet連YouTube慢的真相-人為互連障礙</a>，
+我參考了下面這篇文章稍作修正讓 osx 也能用中研院的 tunnel broker：
+<a href="http://blog.richliu.com/2012/04/28/1204/">Gentoo Gateway 連中研院的 IPv6 Tunnel Broker</a> via <a href="http://blog.richliu.com">richliu's blog</a></p></blockquote>
+
+<!-- more -->
+
+
+<h2>環境需求</h2>
+
+<ol>
+<li>首先，你必須是 Mac OS X （嗯對，這篇是教你在 OS X 上用，其他環境的教學已經有了）</li>
+<li>你要有 <code>root</code> 權限</li>
+<li>你要有開發環境，因為我們需要 C compiler，裝個 <a href="https://developer.apple.com/technologies/tools/">XCode</a> 吧！</li>
+</ol>
+
+
+<p>先到 <a href="http://tb2.ipv6.ascc.net/">http://tb2.ipv6.ascc.net</a> 申請一個帳號，我是選第一個，亂數產生密碼寄到您的信箱。</p>
+
+<h2>TunTap Driver</h2>
+
+<p>再來，你需要安裝一下 <a href="http://tuntaposx.sourceforge.net/">TunTap Driver</a>，這是幹嘛的呢？他讓你的 OS X 可以新增一個虛擬的網路介面，到網站上下載 .pkg 檔安裝就可以了。最新的 release 版本是 <a href="http://downloads.sourceforge.net/tuntaposx/tuntap_20111101.tar.gz">tuntap_20111101</a>，如果不安裝的話，等下 gw6c 是跑不起來的。</p>
+
+<h2>Gateway 6 client</h2>
+
+<p>再來請到 <a href="http://www.go6.net/4105/download.asp">go6.net</a> 下載 gw6c 的 source，這邊我們要自己 compile client 端，選擇 <strong>Client 6.0 Source Code (Linux/Unix/Darwin/BSD)</strong>，解壓縮。</p>
+
+<p>因為我也滿懶，所以我就直接在下載資料夾下面搞了：</p>
+
+<p><code>bash
+$ cd ~/Downloads/gw6c-6_0_1/
+$ cd tspc-advanced
+$ chmod +x template/*.sh
+$ make all
+</code>
+會在 <code>./tspc-advanced/bin</code> 下產生 gw6c 的執行檔</p>
+
+<p>其實你也可以做 install：</p>
+
+<p><code>bash gw6c-6_0_1
+$ cd tspc-advanced
+$ make clean
+$ make platform=darwin installdir=/usr/local/gw6c install
+</code>
+建議是裝在 <code>usr/local/</code> 下面
+然後改寫一下設定檔，拿內附的範例設定來改：</p>
+
+<p><code>bash usr/local/gw6c/
+$ cd bin
+$ vim ./gw6c.conf
+</code>
+編輯 <code>gw6c.conf</code>，大致上就是：</p>
+
+<p><code>bash gw6c.conf
+userid=剛剛申請的帳號
+passwd=剛剛拿到的密碼
+server=tb2.ipv6.ascc.net
+auth_method=digest-md5
+host_type=host
+if_prefix=en0
+</code>
+啟動吧！：</p>
+
+<p>```bash ./tspc-advanced/bin</p>
+
+<h1>這是沒 install 的情況</h1>
+
+<p>$ pwd
+/Users/apple/Downloads/gw6c-6_0_1/tspc-advanced/bin
+$ sudo ./gw6c -f gw6c.conf
+```</p>
+
+<p>```bash usr/local/gw6c</p>
+
+<h1>有 install 就直接來吧</h1>
+
+<p>$ pwd
+/usr/local/gw6c/bin
+$ sudo ./gw6c
+```</p>
+
+<blockquote class="note">
+<p>
+如果你的是 gogoc，步驟也大同小異，應該說一樣 :P，這裡有 gogoc 的 <a href="http://gogo6.com/downloads/gogoc-1_2-RELEASE.tar.gz">source</a>
+</p>
+</blockquote>
+
+
+<p><code>bash
+$ ifconfig
+</code>
+<code>tun0</code> 有起來就是成功了</p>
+
+<p>看一下 ipv6 的 google 吧！<a href="http://ipv6.google.com">ipv6.google.com</a></p>
+
+<h2>後記</h2>
+
+<p>其實好像也沒變多快，不過看 full HD 的有差就是了。</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,430 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Aar0n Huang</title>
+	<meta name="author" content="Aaron Huang">
+
+	
+	<meta name="description" content="Feb 6th, 2013 git Comments Git 指令調味 ( Image by Nancy McCabe, CC license ) 本篇介紹常用 git 指令在實際工作上會使用的呼叫方式，從 commit、push、pull、add 等指令添加 option， &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+	<link href="/atom.xml" rel="alternate" title="Aar0n Huang" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://blog.buginception.com/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<style>
+#banner_git{
+			height: 149px;
+			width: 149px;
+			overflow:hidden;
+			padding: 0;
+			margin: 0;
+			background: none;
+			position:absolute;
+			top:0;
+			right:0;
+			border-bottom:none;
+		}
+
+		#banner_git a{
+
+			display: block;
+			width: 190px;
+			font-size: 14px;
+			font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT",
+				"Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma,
+				Geneva, "Helvetica Neue", Helvetica, Arial, sans serif;
+			background-color: #333;
+			color: #FFF;
+			word-spacing: 2px;
+			text-decoration: none;
+			padding: 5px 15px 5px 25px;
+
+			position:relative;
+			left: 20px;
+			top: -37px;
+			text-align: center;
+
+			-moz-transform-origin: 0 0 ;
+			-moz-transform:rotate(45deg);
+			-moz-box-shadow:    1px 1px 5px 1px #666;
+
+			-webkit-transform-origin: 0 0 ;
+			-webkit-transform:rotate(45deg);
+			-webkit-box-shadow: 1px 1px 5px 1px #666;
+
+			-ms-transform-origin: 0 0 ;
+			-ms-transform:rotate(45deg);
+			-ms-box-shadow: 1px 1px 5px 1px #666;
+
+			transform-origin: 0 0 ;
+			transform:rotate(45deg);
+			box-shadow: 1px 1px 5px 1px #666;
+
+			background-image: linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			background-image: -o-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			background-image: -moz-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			background-image: -webkit-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+			background-image: -ms-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+
+			background-image: -webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(0.03, #000000),
+				color-stop(0.05, #666666),
+				color-stop(0.07, #000000),
+				color-stop(0.93, #000000),
+				color-stop(0.95, #666666),
+				color-stop(0.97, #000000)
+			);
+
+		}
+
+</style>
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript" defer>
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("aaroms9733@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+</div>
+<hgroup>
+  <h1><a href="/">Aar0n Huang</a></h1>
+  
+</hgroup>
+
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="https://trello.com/b/NPAEWvsK" target=_blank>Reading List</a></li>
+  <!--<li><a href="/blog/2012/01/19/yii-zhhant-tutorial-catelog/">YiiFramework</a></li>-->
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/aar0ntw" title="Twitter">Twitter</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-06T23:17:00+08:00" data-updated="true" itemprop="datePublished">Feb 6<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/git/'>git</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2013/02/06/the-git-condiment/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/02/06/the-git-condiment/" itemprop="url">Git 指令調味</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p><img src="http://cdn.buginception.com/public/images/477bbb34c40ed50f2013c93702c588b6.png" alt="red chile" /></p>
+
+<p>( Image by <a href="http://www.behance.net/gallery/Indian-as-Apple-Pie/6206911">Nancy McCabe</a>, CC license )</p>
+
+<blockquote><p>本篇介紹常用 git 指令在實際工作上會使用的呼叫方式，從 <code>commit</code>、<code>push</code>、<code>pull</code>、<code>add</code> 等指令添加 option，使其更貼近於日常使用需求。</p></blockquote>
+
+
+		
+		<a href="/blog/2013/02/06/the-git-condiment/" class="more-link">More &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-30T12:52:00+08:00" data-updated="true" itemprop="datePublished">Jan 30<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/javascript/'>javascript</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2013/01/30/type-checking-in-javascript/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/01/30/type-checking-in-javascript/" itemprop="url">淺談類型判斷 in JavaScript</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p><img src="http://cdn.buginception.com/public/images/7147080735_95308bc455_b.jpeg" alt="image" /></p>
+
+<p>( image via <a href="http://www.flickr.com/photos/livenature/7147080735/">Franco Folini</a> )</p>
+
+<blockquote><p>JavaScript 中如何正確的判斷類型，這東西也許基本，但其實隱藏了許多細節，雖然已經 2013 年了，但是這個看似簡單的問題在 JavaScript 中也許不會有正確且單一的答案。</p></blockquote>
+
+<p>在 JavaScript 中判斷類型，有非常多種選擇，但要記住，絕對不要只選用一種方式來判斷類型，因為不管是哪種選擇，都有其特異的行為與例外，適當的選擇變數的判斷方式，在 JavaScript 的寫作中是非常重要的。</p>
+
+
+		
+		<a href="/blog/2013/01/30/type-checking-in-javascript/" class="more-link">More &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-12T16:05:00+08:00" data-updated="true" itemprop="datePublished">Jan 12<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ios/'>ios</a>, <a class='category' href='/blog/categories/mobile-safari/'>mobile safari</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2013/01/12/apple-itunes-app-meta-tag/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/01/12/apple-itunes-app-meta-tag/" itemprop="url">iOS6 中的 apple-itunes-app tag</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p><img src="http://cdn.buginception.com/public/images/tumblr-iphone-app2.png" alt="image" /></p>
+
+<blockquote><p>上週某一天，我在逛 tumblr 的時候，發現了一個有趣的 meta tag，Jamie Sa ( <a href="http://twitter.com/jamex">@jamex</a> ) 他逼我一定要寫一篇文講這個。<i class='emoji scream'></i></p></blockquote>
+
+<p>當我們運用 iPhone 逛到某些網站的時候，會看到他的最上方出現了一個 itunes 的 Banner，像是下面這樣：</p>
+
+
+		
+		<a href="/blog/2013/01/12/apple-itunes-app-meta-tag/" class="more-link">More &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-13T00:27:00+08:00" data-updated="true" itemprop="datePublished">Oct 13<span>th</span>, 2012</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/cocoaheads/'>cocoaheads</a>, <a class='category' href='/blog/categories/git/'>git</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2012/10/13/recap-git-branching-model/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/10/13/recap-git-branching-model/" itemprop="url">成功的 Git 分支模式</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p><img src="/images/137c1365ae01d749bcfbf502f51c9f0d.jpeg" alt="image" /></p>
+
+<p>(image via <a href="http://www.behance.net/gallery/The-Branch/3680339">Bartek Elsner</a>)</p>
+
+<blockquote><p>這週四，有幸參與了 CocoaHeads Taipei 十月份的聚會，並且跟與會的朋友們分享了公司內部管理 Git 分支的模式，其實這個模式其實非常流行了，最早是由 <a href="http://nvie.com/posts/a-successful-git-branching-model/">Vincent Driessen</a> 先生於他的 Blog 分享的，並且有許多團隊都是採用這麼一套 flow，這篇文章主要是整理 CocoaHeads 當天我所分享的內容，並且做更詳細的補充。</p></blockquote>
+
+
+		
+		<a href="/blog/2012/10/13/recap-git-branching-model/" class="more-link">More &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-16T02:14:00+08:00" data-updated="true" itemprop="datePublished">Sep 16<span>th</span>, 2012</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/talk/'>talk</a>, <a class='category' href='/blog/categories/tools/'>tools</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2012/09/16/something-about-pomodoro/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2012/09/16/something-about-pomodoro/" itemprop="url">蕃茄工作法的二三事</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p><img src="/images/845771234133967.png" alt="image" /></p>
+
+<p>(image via <a href="http://www.behance.net/speltospel">Vladimir Pospelov</a>)</p>
+
+<blockquote><p>上週二，不小心參與了 <a href="http://jonathanspeaking.blogspot.tw/">Joanthan</a> 號招的 <a href="https://www.facebook.com/AgileCommunity.tw">AgileCommunication.TW</a>，形式是每個人五分鐘的閃電秀，Pomodoro 蕃茄工作法，就是我在這五分鐘裡面分享的題目。我在今年初的時候偶然的情況下看見同事電腦上的蕃茄鐘 App，經由同事的介紹，而開始使用蕃茄鐘。說實在五分鐘有點短，因此這篇算是再整理一下我在實際運用 Pomodoro 上的心得與感想 :)</p></blockquote>
+
+
+		
+		<a href="/blog/2012/09/16/something-about-pomodoro/" class="more-link">More &rarr;</a>
+	</div>
+
+</article>
+
+</div>
+<nav id="pagenavi">
+    
+    
+        <a href="/blog/page/2/" class="next">Next</a>
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2014 - Aaron Huang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit">Theme by <a href="http://melandri.net/2012/02/14/octopress-theme-customization/">Alessandro Melandri</a></span>
+</p>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'aar0n-blog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-26597036-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>
